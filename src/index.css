@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+    --color-muted: hsl(40 10% 95%);
+    --color-muted-foreground: hsl(230 8% 45%);
+    --color-primary: hsl(174 62% 38%);
+}
+
+@variant dark {
+    :root {
+        --color-muted: hsl(230 12% 13%);
+        --color-muted-foreground: hsl(230 8% 55%);
+        --color-primary: hsl(174 55% 48%);
+    }
+} 
