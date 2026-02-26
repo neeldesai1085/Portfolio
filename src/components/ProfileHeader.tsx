@@ -1,6 +1,5 @@
 import { usePortfolioStore } from "@/store/portfolioStore";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import Image from "@/assets/image.png"
 import profile from "@/data/profile.json";
 import { useEffect, useState } from "react";
 
@@ -41,7 +40,7 @@ export default function ProfileHeader() {
       >
         <div className="flex items-center gap-3 min-w-0">
             <Avatar className="h-8 w-8 shrink-0 rounded-full overflow-hidden">
-                <AvatarImage src={Image} alt={profile.name} className="object-cover" />
+                <AvatarImage src={profile.picture} alt={profile.name} className="object-cover" />
                 <AvatarFallback className={isDev ? 
                 "bg-terminal-accent/20 text-terminal-accent text-xs"
                 : "bg-primary/10 text-primary text-xs"}>
