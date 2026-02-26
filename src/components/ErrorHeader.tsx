@@ -1,16 +1,14 @@
 import { usePortfolioStore } from "@/store/portfolioStore";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import profile from "@/data/profile.json";
-import { useRef } from "react";
 import { Link } from "react-router";
-import { Download, Network, Terminal } from "lucide-react";
+import { Download } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import RotatingDesignation from "./RotatingDesignation";
 
-export default function ProfileHeader() {
-    const { mode, setMode } = usePortfolioStore();
+export default function ErrorHeader() {
+    const { mode } = usePortfolioStore();
     const isDev = mode === "dev";
-    const devBtnRef = useRef<HTMLButtonElement | null>(null);
 
     return (
         <header
@@ -71,28 +69,6 @@ export default function ProfileHeader() {
                 </a>
 
                 <ThemeToggle />
-
-                <div className="relative">
-                    <button
-                        ref={devBtnRef}
-                        onClick={() => setMode(isDev ? "hr" : "dev")}
-                        className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium transition-colors ${
-                            isDev
-                                ? "bg-terminal-text/10 text-terminal-text hover:bg-terminal-text/20"
-                                : "bg-foreground/5 text-foreground hover:bg-foreground/10"
-                        }`}
-                    >
-                        {isDev ? (
-                            <Network className="h-3 w-3" />
-                        ) : (
-                            <Terminal className="h-3 w-3" />
-                        )}
-                        <span className="sm:inline">
-                            {isDev ? "HR Mode" : "Dev Mode"}
-                        </span>
-                    </button>
-                    {/* {!isDev && <DevModeArrow />} */}
-                </div>
             </div>
         </header>
     );

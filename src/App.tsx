@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { usePortfolioStore } from "./store/portfolioStore";
+import "./App.css";
 import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 
