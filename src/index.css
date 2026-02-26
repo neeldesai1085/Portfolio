@@ -12,20 +12,20 @@
     --color-card-foreground: hsl(230 15% 15%);
     --color-terminal-accent: hsl(24 80% 44%);
     --color-terminal-muted: hsl(220 8% 56%);
+    --color-foreground: hsl(230 15% 15%);
 }
 
-@variant dark {
-    :root {
-        --color-muted: hsl(230 12% 13%);
-        --color-muted-foreground: hsl(230 8% 55%);
-        --color-primary: hsl(174 55% 48%);
-        --color-terminal-surface: hsl(230 22% 8%);
-        --color-terminal-border: hsl(230 18% 14%);
-        --color-terminal-text: hsl(40 12% 85%);
-        --color-card: hsl(230 18% 10%);
-        --color-border: hsl(230 12% 18%);
-        --color-card-foreground: hsl(40 15% 90%);
-        --color-terminal-accent: hsl(38 95% 55%);
-        --color-terminal-muted: hsl(230 10% 38%);
-    }
-} 
+.dark {
+    --color-muted: hsl(230 12% 13%);
+    --color-muted-foreground: hsl(230 8% 55%);
+    --color-primary: hsl(174 55% 48%);
+    --color-terminal-surface: hsl(230 22% 8%);
+    --color-terminal-border: hsl(230 18% 14%);
+    --color-terminal-text: hsl(40 12% 85%);
+    --color-card: hsl(230 18% 10%);
+    --color-border: hsl(230 12% 18%);
+    --color-card-foreground: hsl(40 15% 90%);
+    --color-terminal-accent: hsl(38 95% 55%);
+    --color-terminal-muted: hsl(230 10% 38%);
+    --color-foreground: hsl(40 15% 90%);
+}

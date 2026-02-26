@@ -15,7 +15,7 @@ export const usePortfolioStore = create<PortfolioState>() (
             theme: getSystemTheme(),
             mode: 'hr',
             setTheme: (theme: AppTheme) => set({ theme }),
-            setMode: (mode: AppMode) => set({ mode })
+            setMode: (mode: AppMode) => set({ mode }),
         }),
         {
             name: "portfolio-state",
