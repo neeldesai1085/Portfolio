@@ -91,7 +91,11 @@ export default function ProfileHeader() {
                             {isDev ? "HR Mode" : "Dev Mode"}
                         </span>
                     </button>
-                    {/* {!isDev && <DevModeArrow />} */}
+                    {!isDev && (
+                        <span className="absolute left-0 bottom-0 translate-y-3 text-[10px] text-primary/80 italic">
+                            only for developers
+                        </span>
+                    )}
                 </div>
             </div>
         </header>
