@@ -31,7 +31,7 @@ export default function ContactForm() {
                     message,
                     time: new Date().toLocaleString(),
                 },
-                import.meta.env.VITE_PUBLIC_KEY,
+                import.meta.env.VITE_PUBLIC_ID,
             );
 
             setToastTitle("Success");
