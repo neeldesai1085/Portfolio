@@ -17,7 +17,7 @@ export default function ContactForm() {
     const [toastMessage, setToastMessage] = useState("");
     const [toastTitle, setToastTitle] = useState("");
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         try {
