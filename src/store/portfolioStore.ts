@@ -14,8 +14,10 @@ export const usePortfolioStore = create<PortfolioState>() (
         (set) => ({
             theme: getSystemTheme(),
             mode: 'hr',
+            contactOpen: false,
             setTheme: (theme: AppTheme) => set({ theme }),
             setMode: (mode: AppMode) => set({ mode }),
+            setContactOpen: (open: boolean) => set({ contactOpen: open })
         }),
         {
             name: "portfolio-state",
