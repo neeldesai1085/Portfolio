@@ -1,0 +1,44 @@
+{
+    "entries": [
+        {
+            "id": "t1",
+            "versionTag": "v1.0",
+            "title": "Started Web Development",
+            "description": "Began learning HTML, CSS, and JavaScript. Built first static websites and discovered passion for frontend engineering.",
+            "year": "2020",
+            "type": "learning"
+        },
+        {
+            "id": "t2",
+            "versionTag": "v1.5",
+            "title": "React & TypeScript Deep Dive",
+            "description": "Invested heavily in React ecosystem and TypeScript. Built multiple projects exploring component patterns and type safety.",
+            "year": "2021",
+            "type": "learning"
+        },
+        {
+            "id": "t3",
+            "versionTag": "v2.0",
+            "title": "First Professional Project",
+            "description": "Delivered a production application for a real client. Learned about code reviews, deployment, and maintaining software at scale.",
+            "year": "2022",
+            "type": "deployment"
+        },
+        {
+            "id": "t4",
+            "versionTag": "v2.5",
+            "title": "AI/ML Exploration",
+            "description": "Expanded into machine learning, neural networks, and AI integration in frontend applications. Combined frontend skills with ML capabilities.",
+            "year": "2023",
+            "type": "milestone"
+        },
+        {
+            "id": "t5",
+            "versionTag": "v3.0",
+            "title": "System Architecture Focus",
+            "description": "Shifted focus to system-level thinking. Designing component libraries, state management patterns, and developer tooling.",
+            "year": "2024",
+            "type": "milestone"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "items": [
+        {
+            "id": "portfolio-system",
+            "title": "Dual-Mode Portfolio",
+            "shortDescription": "A polymorphic portfolio with terminal and graph interfaces.",
+            "detailedDescription": "A single React + TypeScript runtime system rendering two completely different interaction models powered by the same structured JSON data layer. Demonstrates UI abstraction, runtime state management, and data-driven rendering.",
+            "stack": ["React", "TypeScript", "Zustand", "Tailwind CSS", "Vite"],
+            "architectureNotes": "Mode-based rendering with shared data layer. Command engine for terminal, graph engine for node visualization. All content driven by JSON files.",
+            "githubLink": "https://github.com/neeldesai/portfolio",
+            "liveLink": "#",
+            "featured": true
+        },
+        {
+            "id": "component-library",
+            "title": "UI Component Library",
+            "shortDescription": "A typed, themeable component system with design tokens.",
+            "detailedDescription": "Built a comprehensive React component library with full TypeScript support, design token system, and automated documentation. Includes 40+ components with accessibility built in.",
+            "stack": ["React", "TypeScript", "Storybook", "CSS Modules"],
+            "architectureNotes": "Compound component pattern with context-based theming. Automated visual regression testing with Chromatic.",
+            "metrics": { "lighthouse": 98, "bundleSize": "32kb" },
+            "githubLink": "https://github.com/neeldesai/ui-lib",
+            "liveLink": "#",
+            "featured": true
+        },
+        {
+            "id": "state-machine-form",
+            "title": "State Machine Forms",
+            "shortDescription": "Form engine powered by XState finite state machines.",
+            "detailedDescription": "A declarative form builder that uses finite state machines to manage complex multi-step form flows. Supports conditional logic, validation, and async submissions.",
+            "stack": ["React", "XState", "TypeScript", "Zod"],
+            "architectureNotes": "Each form is a state machine definition. Transitions handle validation, field visibility, and submission. Zero re-renders on field changes.",
+            "metrics": { "lighthouse": 92, "bundleSize": "28kb" },
+            "githubLink": "https://github.com/neeldesai/sm-forms",
+            "liveLink": "#",
+            "featured": false
+        }
+    ]
+}

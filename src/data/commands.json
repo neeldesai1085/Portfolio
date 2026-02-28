@@ -1,0 +1,64 @@
+{
+    "commands": [
+        {
+            "name": "help",
+            "description": "Show this help message",
+            "usage": "help"
+        },
+        {
+            "name": "about",
+            "description": "Display profile information",
+            "usage": "about"
+        },
+        {
+            "name": "projects",
+            "description": "List all projects",
+            "usage": "projects"
+        },
+        {
+            "name": "open",
+            "description": "View project details",
+            "usage": "open <project-id>",
+            "hasArgs": true
+        },
+        {
+            "name": "skills",
+            "description": "Display skill categories",
+            "usage": "skills"
+        },
+        {
+            "name": "timeline",
+            "description": "Show career timeline",
+            "usage": "timeline"
+        },
+        {
+            "name": "contact",
+            "description": "Open contact form",
+            "usage": "contact"
+        },
+        {
+            "name": "inspect",
+            "description": "View runtime state",
+            "usage": "inspect"
+        },
+        {
+            "name": "theme",
+            "description": "Switch theme",
+            "usage": "theme <light|dark>",
+            "hasArgs": true,
+            "subcommands": ["light", "dark"]
+        },
+        {
+            "name": "mode",
+            "description": "Switch mode",
+            "usage": "mode <hr|dev>",
+            "hasArgs": true,
+            "subcommands": ["hr", "dev"]
+        },
+        { 
+            "name": "clear", 
+            "description": "Clear terminal", 
+            "usage": "clear" 
+        }
+    ]
+}

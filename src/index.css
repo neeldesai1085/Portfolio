@@ -13,6 +13,9 @@
     --color-terminal-accent: hsl(24 80% 44%);
     --color-terminal-muted: hsl(220 8% 56%);
     --color-foreground: hsl(230 15% 15%);
+    --color-terminal-bg: hsl(220 14% 96%);
+    --color-terminal-error: hsl(0 65% 48%);
+    --color-terminal-text: hsl(230 15% 18%);
 }
 
 .dark {
@@ -28,4 +31,7 @@
     --color-terminal-accent: hsl(38 95% 55%);
     --color-terminal-muted: hsl(230 10% 38%);
     --color-foreground: hsl(40 15% 90%);
+    --color-terminal-bg: hsl(230 25% 5%);
+    --color-terminal-error: hsl(0 65% 48%);
+    --color-terminal-text: hsl(40 12% 85%);
 }

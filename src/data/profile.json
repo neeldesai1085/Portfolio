@@ -1,5 +1,8 @@
 {
     "name": "Neel Desai",
+    "role": "Student at SGSITS Indore",
+    "tagline": "B. Tech. Undergraduate | Information Technology | Batch '27",
+    "longDescription": "Passionate about software development, competitive programming, and core computer science. Always eager to learn and take on new challenges. Problem solving and creating efficient solutions is what drives me. Looking forward to making a meaningful impact in the tech world.",
     "designations": [
         "Software Engineer",
         "Full Stack Developer",
@@ -7,6 +10,12 @@
         "Competitive Programmer",
         "Core CS Enthusiast"
     ],
+    "contact": {
+        "email": "desaineel1085@gmail.com",
+        "phone": "+91 96915 68133",
+        "linkedin": "https://www.linkedin.com/in/neeldesai1085/",
+        "location": "Indore, India"
+    },
     "picture": "/picture.png",
     "resume": "/resume.pdf"
 }

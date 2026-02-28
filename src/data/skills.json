@@ -1,0 +1,37 @@
+{
+    "categories": [
+        {
+            "name": "Frontend",
+            "items": [
+                { 
+                    "id": "react", 
+                    "name": "React", 
+                    "proficiencyLevel": 92, 
+                    "description": "Component architecture, hooks, concurrent features, server components.", 
+                    "relatedProjects": ["portfolio-system", "component-library"] 
+                },
+                { 
+                    "id": "typescript", 
+                    "name": "TypeScript", 
+                    "proficiencyLevel": 90,
+                    "description": "Strict typing, generics, utility types, type-safe APIs.", 
+                    "relatedProjects": ["portfolio-system", "state-machine-form"] 
+                },
+                { 
+                    "id": "css", 
+                    "name": "CSS / Tailwind", 
+                    "proficiencyLevel": 88, 
+                    "description": "Design systems, responsive layouts, animations, CSS-in-JS.", 
+                    "relatedProjects": ["component-library"] 
+                },
+                { 
+                    "id": "nextjs", 
+                    "name": "Next.js", 
+                    "proficiencyLevel": 80, 
+                    "description": "App router, SSR, ISR, API routes, middleware.", 
+                    "relatedProjects": [] 
+                }
+            ]
+        }
+    ]
+}

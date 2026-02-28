@@ -1,5 +1,6 @@
 import ProfileHeader from "@/components/ProfileHeader";
 import ContactForm from "@/components/ContactForm";
+import Terminal from "@/components/dev/Terminal";
 
 const Index = () => {
     return (
@@ -9,6 +10,7 @@ const Index = () => {
                 {/* <div key={mode} className="h-full animate-fade-in">
                     {mode === "dev" ? <DevMode /> : <HRMode />}
                 </div> */}
+                <Terminal />
             </main>
             <ContactForm />
         </div>
