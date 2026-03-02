@@ -3,5 +3,10 @@
         "welcomeMessage": "Welcome to my portfolio! Type 'help' to see a list of available commands.",
         "prompt": "neeld@portfolio:~$",
         "placeholder": "Type a command..."
+    },
+    "hrMode": {
+        "sections": {
+            "exploreTitle": "Interactive Portfolio Graph"
+        }
     }
 }

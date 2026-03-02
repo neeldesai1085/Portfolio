@@ -18,7 +18,7 @@ export default function RotatingDesignation() {
 
     return (
         <span
-            className="text-xs transition-opacity duration-300"
+            className="transition-opacity duration-300"
             style={{ opacity: fade ? 1 : 0 }}
         >
             {profile.designations[index]}

@@ -9,11 +9,24 @@ function getSystemTheme(): AppTheme {
     return "light";
 }
 
+function getInitialMode(): AppMode {
+    if (typeof window === "undefined") return "hr";
+
+    const params = new URLSearchParams(window.location.search);
+    const modeParam = params.get("mode");
+
+    if (modeParam === "dev" || modeParam === "hr") {
+        return modeParam;
+    }
+
+    return "hr"; // default
+};
+
 export const usePortfolioStore = create<PortfolioState>() (
     persist(
         (set) => ({
             theme: getSystemTheme(),
-            mode: 'hr',
+            mode: getInitialMode(),
             contactOpen: false,
             setTheme: (theme: AppTheme) => set({ theme }),
             setMode: (mode: AppMode) => set({ mode }),

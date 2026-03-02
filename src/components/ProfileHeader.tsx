@@ -44,7 +44,7 @@ export default function ProfileHeader() {
                             {profile.name}
                         </h1>
                         <div
-                            className={`text-left ${
+                            className={`text-left text-xs ${
                                 isDev
                                     ? "text-terminal-muted"
                                     : "text-muted-foreground"
