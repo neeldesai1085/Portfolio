@@ -5,8 +5,15 @@
         "placeholder": "Type a command..."
     },
     "hrMode": {
+        "helpTitle": "How to Navigate",
+        "helpItems": [
+            "Click category nodes to expand/collapse",
+            "Click root or leaf nodes to view details",
+            "Drag any node to rearrange the graph"
+        ],
         "sections": {
-            "exploreTitle": "Interactive Portfolio Graph"
+            "exploreTitle": "Interactive Portfolio Graph",
+            "exploreSubtitle": "Navigate through my work, skills, and experience using the interactive graph below."
         }
     }
 }

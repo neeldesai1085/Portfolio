@@ -1,7 +1,7 @@
 import { usePortfolioStore } from "@/store/portfolioStore";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import profile from "@/data/profile.json";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router";
 import { Download, Network, Terminal } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
@@ -10,10 +10,31 @@ import RotatingDesignation from "./RotatingDesignation";
 export default function ProfileHeader() {
     const { mode, setMode } = usePortfolioStore();
     const isDev = mode === "dev";
+    const headerRef = useRef<HTMLElement | null>(null);
     const devBtnRef = useRef<HTMLButtonElement | null>(null);
+
+    useEffect(() => {
+        const headerEl = headerRef.current;
+        if (!headerEl) return;
+
+        const root = document.documentElement;
+        const updateHeaderHeight = () => {
+            const height = Math.ceil(headerEl.getBoundingClientRect().height);
+            root.style.setProperty("--app-header-height", `${height}px`);
+        };
+
+        updateHeaderHeight();
+
+        if (typeof ResizeObserver === "undefined") return;
+        const observer = new ResizeObserver(updateHeaderHeight);
+        observer.observe(headerEl);
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
         <header
+            ref={headerRef}
             className={`flex items-center justify-between px-3 sm:px-5 py-2.5 border-b shrink-0 
             ${
                 isDev
