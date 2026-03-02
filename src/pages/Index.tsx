@@ -6,7 +6,7 @@ import Terminal from "@/components/dev/Terminal";
 import HRMode from "@/components/hr/HRMode";
 
 const Index = () => {
-    const { mode, theme, setMode, modeTransition, setModeTransition } = usePortfolioStore();
+    const { mode } = usePortfolioStore();
 
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
@@ -27,8 +27,7 @@ const Index = () => {
             <ProfileHeader />
             <main className="flex-1 overflow-hidden">
                 <div key={mode} className="h-full animate-fade-in">
-                    {/* {mode === "dev" ? <Terminal /> : <HRMode />} */}
-                    <HRMode />
+                    {mode === "dev" ? <Terminal /> : <HRMode />}
                 </div>
             </main>
             <ContactForm />

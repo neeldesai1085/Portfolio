@@ -4,7 +4,7 @@ import profile from "@/data/profile.json";
 import uiStrings from "@/data/uiStrings.json";
 import RotatingDesignation from "@/components/RotatingDesignation";
 
-export default function HRMode({ onScrollToGraph }: Props) {
+export default function HRMode({ onScrollToGraph }: { onScrollToGraph: () => void }) {
     return (
         <section className="min-h-[calc(100vh-52px)] flex flex-col items-center justify-center px-6 py-12 bg-background relative overflow-hidden">
             <div

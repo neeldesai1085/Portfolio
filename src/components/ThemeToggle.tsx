@@ -8,7 +8,7 @@ export default function ThemeToggle() {
     return (
         <button
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            className={`inline-flex items-center justify-center h-8 w-8 rounded-md transition-colors ${
+            className={`inline-flex items-center justify-center h-8 w-8 rounded-md transition-colors cursor-pointer ${
                 isDev
                     ? "text-terminal-text hover:bg-terminal-text/10"
                     : "text-foreground hover:bg-foreground/5"

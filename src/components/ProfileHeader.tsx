@@ -76,7 +76,7 @@ export default function ProfileHeader() {
                     <button
                         ref={devBtnRef}
                         onClick={() => setMode(isDev ? "hr" : "dev")}
-                        className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                        className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium transition-colors cursor-pointer ${
                             isDev
                                 ? "bg-terminal-text/10 text-terminal-text hover:bg-terminal-text/20"
                                 : "bg-foreground/5 text-foreground hover:bg-foreground/10"
