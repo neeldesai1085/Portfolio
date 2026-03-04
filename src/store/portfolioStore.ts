@@ -3,7 +3,10 @@ import { persist } from "zustand/middleware";
 import type { AppTheme, PortfolioState, AppMode } from "../types/portfolio";
 
 function getSystemTheme(): AppTheme {
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
         return "dark";
     }
     return "light";
@@ -20,23 +23,25 @@ function getInitialMode(): AppMode {
     }
 
     return "hr"; // default
-};
+}
 
-export const usePortfolioStore = create<PortfolioState>() (
+export const usePortfolioStore = create<PortfolioState>()(
     persist(
         (set) => ({
             theme: getSystemTheme(),
             mode: getInitialMode(),
             contactOpen: false,
+            outputs: [],
             setTheme: (theme: AppTheme) => set({ theme }),
             setMode: (mode: AppMode) => set({ mode }),
-            setContactOpen: (open: boolean) => set({ contactOpen: open })
+            setContactOpen: (open: boolean) => set({ contactOpen: open }),
+            setOutputs: (outputs) => set({ outputs }),
         }),
         {
             name: "portfolio-state",
             partialize: (state) => ({
-                theme: state.theme
-            })
-        }
-    )
-)
+                theme: state.theme,
+            }),
+        },
+    ),
+);

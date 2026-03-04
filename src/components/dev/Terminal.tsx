@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { usePortfolioStore } from "@/store/portfolioStore";
+import type { OutputEntry } from "@/types/portfolio";
 import uiStrings from "@/data/uiStrings.json";
 import commandsData from "@/data/commands.json";
 import projects from "@/data/projects.json";
@@ -7,42 +8,43 @@ import profile from "@/data/profile.json";
 import skills from "@/data/skills.json";
 import timeline from "@/data/timeline.json";
 
-interface OutputEntry {
-    type: "command" | "error" | "info";
-    content: React.ReactNode;
-}
-
 export interface CommandResult {
     type: "success" | "error" | "info" | "clear" | "mode-switch" | "contact";
     content: React.ReactNode;
 }
 
 export default function Terminal() {
-    const { setMode, setTheme, setContactOpen } = usePortfolioStore();
+    const { setMode, setTheme, setContactOpen, outputs, setOutputs } =
+        usePortfolioStore();
 
     const [suggestions, setSuggestions] = useState<string[]>([]);
     const [input, setInput] = useState("");
     const [history, setHistory] = useState<string[]>([]);
     const [historyIdx, setHistoryIdx] = useState(-1);
     const [suggestionIdx, setSuggestionIdx] = useState(-1);
-    const [outputs, setOutputs] = useState<OutputEntry[]>([
-        {
-            type: "info",
-            content: (
-                <span>
-                    {uiStrings.terminal.welcomeMessage.split("help")[0]}
-                    <span className="text-terminal-accent">help</span>
-                    {uiStrings.terminal.welcomeMessage.split("help")[1]}
-                </span>
-            ),
-        },
-    ]);
     const inputRef = useRef<HTMLInputElement>(null);
     const outputRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         inputRef.current?.focus();
     }, []);
+
+    useEffect(() => {
+        if (outputs.length === 0) {
+            setOutputs([
+                {
+                    type: "info",
+                    content: (
+                        <span>
+                            {uiStrings.terminal.welcomeMessage.split("help")[0]}
+                            <span className="text-terminal-accent">help</span>
+                            {uiStrings.terminal.welcomeMessage.split("help")[1]}
+                        </span>
+                    ),
+                },
+            ]);
+        }
+    }, [outputs.length, setOutputs]);
 
     useEffect(() => {
         outputRef.current?.scrollTo(0, outputRef.current.scrollHeight);
@@ -505,8 +507,9 @@ export default function Terminal() {
         }
 
         if (result.type === "mode-switch") {
-            setOutputs((prev) => [
-                ...prev,
+            const latestOutputs = usePortfolioStore.getState().outputs;
+            setOutputs([
+                ...latestOutputs,
                 cmdEntry,
                 { type: "info", content: result.content },
             ]);
@@ -520,8 +523,9 @@ export default function Terminal() {
 
         if (result.type === "contact") {
             setContactOpen(true);
-            setOutputs((prev) => [
-                ...prev,
+            const latestOutputs = usePortfolioStore.getState().outputs;
+            setOutputs([
+                ...latestOutputs,
                 cmdEntry,
                 { type: "info", content: "Opening contact form..." },
             ]);
@@ -536,8 +540,9 @@ export default function Terminal() {
             }
         }
 
-        setOutputs((prev) => [
-            ...prev,
+        const latestOutputs = usePortfolioStore.getState().outputs;
+        setOutputs([
+            ...latestOutputs,
             cmdEntry,
             {
                 type: result.type as OutputEntry["type"],
