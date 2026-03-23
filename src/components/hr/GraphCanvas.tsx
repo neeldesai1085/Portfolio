@@ -74,7 +74,7 @@ function getRandomValidPosition(
 ): { x: number; y: number } {
     const topPadding = Math.max(120, padding);
     const rightPadding = padding;
-    const bottomPadding = padding;
+    const bottomPadding = Math.max(120, padding);
 
     let bestPos = { x: width / 2, y: height / 2 };
     let maxMinDist = 0;
@@ -223,7 +223,7 @@ export default function GraphCanvas({
 
             const paddingX = 60;
             const topPadding = 120;
-            const bottomPadding = 60;
+            const bottomPadding = 120;
 
             rawX = Math.max(paddingX, Math.min(rawX, w - paddingX));
             rawY = Math.max(topPadding, Math.min(rawY, h - bottomPadding));

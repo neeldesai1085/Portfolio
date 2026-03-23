@@ -8,7 +8,7 @@ import type { NodeType } from "@/components/hr/GraphCanvas";
 import GraphOverlay from "@/components/hr/GraphOverlay";
 
 export default function HRMode() {
-    const [showHelp, setShowHelp] = useState(true);
+    const [showHelp, setShowHelp] = useState(false);
     const [graphVisible, setGraphVisible] = useState(false);
     const [selectedNodeData, setSelectedNodeData] = useState<Record<
         string,
@@ -61,9 +61,9 @@ export default function HRMode() {
                     height: "calc(100dvh - var(--app-header-height, 52px))",
                 }}
             >
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20 text-center pointer-events-none">
-                    <div className="bg-background/80 backdrop-blur-xl px-6 py-2 rounded-2xl border border-border/50 shadow-sm inline-block">
-                        <h2 className="text-lg font-bold text-foreground">
+                <div className="absolute top-0 w-full z-20 text-center pointer-events-none">
+                    <div className="bg-background/80 backdrop-blur-xl px-6 py-3 border-b border-border/50 shadow-sm w-full">
+                        <h2 className="text-lg font-semibold text-foreground">
                             {uiStrings.hrMode.sections.exploreTitle}
                         </h2>
                         <p className="text-xs text-muted-foreground mt-0.5">
