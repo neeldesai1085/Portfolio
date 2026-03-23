@@ -91,7 +91,9 @@ export default function ProfileHeader() {
                     <span className="sm:inline">Resume</span>
                 </a>
 
-                <ThemeToggle />
+                <div className="hidden sm:block">
+                    <ThemeToggle />
+                </div>
 
                 <div className="relative">
                     <button
