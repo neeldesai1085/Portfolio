@@ -612,43 +612,43 @@ export default function Terminal() {
 
             <form
                 onSubmit={handleSubmit}
-                className="flex items-center border-t border-terminal-border px-4 py-3 bg-terminal-surface"
+                className="flex items-center border-t border-terminal-border px-4 py-3 bg-terminal-surface relative"
             >
                 <span className="text-terminal-accent mr-2 text-base shrink-0">
                     {uiStrings.terminal.prompt}
                 </span>
 
-                <input
-                    ref={inputRef}
-                    value={input}
-                    style={{
-                        width: input.length === 0 ? "0" : `${input.length}ch`,
-                    }}
-                    onChange={(e) => {
-                        const nextValue = e.target.value;
-                        setInput(nextValue);
-                        setSuggestionIdx(-1);
-                        if (nextValue.trim()) {
-                            setSuggestions(
-                                getAutocompleteSuggestions(nextValue),
-                            );
-                        } else {
-                            setSuggestions([]);
-                        }
-                    }}
-                    onKeyDown={handleKeyDown}
-                    className="bg-transparent outline-none text-base text-terminal-text placeholder:text-terminal-muted caret-transparent p-0 border-0"
-                    placeholder=""
-                    autoFocus
-                    spellCheck={false}
-                    autoComplete="off"
-                />
-                <span className="w-2 h-4 bg-terminal-accent animate-blink" />
-                {input.length === 0 && (
-                    <span className="text-base text-terminal-muted select-none">
-                        {uiStrings.terminal.placeholder}
-                    </span>
-                )}
+                <div className="flex-1 relative flex items-center h-6 overflow-hidden">
+                    <input
+                        ref={inputRef}
+                        value={input}
+                        onChange={(e) => {
+                            const nextValue = e.target.value;
+                            setInput(nextValue);
+                            setSuggestionIdx(-1);
+                            if (nextValue.trim()) {
+                                setSuggestions(
+                                    getAutocompleteSuggestions(nextValue),
+                                );
+                            } else {
+                                setSuggestions([]);
+                            }
+                        }}
+                        onKeyDown={handleKeyDown}
+                        className="w-full h-full bg-transparent outline-none text-base text-terminal-text placeholder:text-terminal-muted caret-transparent p-0 border-0 font-mono"
+                        placeholder={uiStrings.terminal.placeholder}
+                        autoFocus
+                        spellCheck={false}
+                        autoComplete="off"
+                    />
+                    <span 
+                        className="absolute pointer-events-none w-2 h-4 bg-terminal-accent animate-blink"
+                        style={{ 
+                            left: `${input.length}ch`,
+                            marginLeft: input.length === 0 ? "0px" : "1px"
+                        }} 
+                    />
+                </div>
             </form>
         </div>
     );
