@@ -1,0 +1,12 @@
+{
+  "colors": [
+    { "light": "#dc2626", "dark": "#ef4444" },
+    { "light": "#2563eb", "dark": "#3b82f6" },
+    { "light": "#059669", "dark": "#10b981" },
+    { "light": "#9333ea", "dark": "#a855f7" },
+    { "light": "#ea580c", "dark": "#f59e0b" },
+    { "light": "#db2777", "dark": "#ec4899" },
+    { "light": "#0891b2", "dark": "#06b6d4" },
+    { "light": "#4f46e5", "dark": "#6366f1" }
+  ]
+}
