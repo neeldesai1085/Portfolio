@@ -139,8 +139,8 @@ export default function Terminal() {
                         Available Commands:
                     </p>
                     {commandsData.commands.map((c) => (
-                        <div key={c.name} className="flex gap-4">
-                            <span className="text-terminal-accent w-32 shrink-0 font-mono text-base">
+                        <div key={c.name} className="flex flex-col sm:flex-row gap-0 sm:gap-4">
+                            <span className="text-terminal-accent sm:w-32 shrink-0 font-mono text-base">
                                 {c.usage}
                             </span>
                             <span className="text-base opacity-70">
@@ -289,22 +289,24 @@ export default function Terminal() {
                             {cat.items.map((s) => (
                                 <div
                                     key={s.id}
-                                    className="flex items-center gap-3 text-base ml-2 mb-1"
+                                    className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-base ml-2 mb-3 sm:mb-1"
                                 >
-                                    <span className="w-28 shrink-0">
+                                    <span className="sm:w-28 shrink-0">
                                         {s.name}
                                     </span>
-                                    <div className="flex-1 h-1.5 rounded-full bg-current/10 max-w-48">
-                                        <div
-                                            className="h-full rounded-full bg-current/50"
-                                            style={{
-                                                width: `${s.proficiencyLevel}%`,
-                                            }}
-                                        />
+                                    <div className="flex items-center gap-3 w-full sm:flex-1">
+                                        <div className="flex-1 h-1.5 rounded-full bg-current/10 max-w-48">
+                                            <div
+                                                className="h-full rounded-full bg-current/50"
+                                                style={{
+                                                    width: `${s.proficiencyLevel}%`,
+                                                }}
+                                            />
+                                        </div>
+                                        <span className="text-sm opacity-50 w-8 shrink-0">
+                                            {s.proficiencyLevel}%
+                                        </span>
                                     </div>
-                                    <span className="text-sm opacity-50 w-8">
-                                        {s.proficiencyLevel}%
-                                    </span>
                                 </div>
                             ))}
                         </div>

@@ -193,6 +193,38 @@ export default function GraphCanvas({
         return () => observer.disconnect();
     }, []);
 
+    useEffect(() => {
+        if (typeof window === "undefined") return;
+
+        const handleResize = () => {
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+            const paddingX = 60;
+            const topPadding = 120;
+            const bottomPadding = 120;
+
+            setNodes((ns) =>
+                ns.map((n) => {
+                    let newX = n.x;
+                    let newY = n.y;
+                    
+                    if (newX < paddingX) newX = paddingX;
+                    if (newX > w - paddingX) newX = w - paddingX;
+                    if (newY < topPadding) newY = topPadding;
+                    if (newY > h - bottomPadding) newY = h - bottomPadding;
+
+                    if (newX !== n.x || newY !== n.y) {
+                        return { ...n, x: newX, y: newY };
+                    }
+                    return n;
+                })
+            );
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     const handlePointerDown = (e: React.PointerEvent, node: ItemNode) => {
         e.stopPropagation();
         dragState.current = {
