@@ -635,19 +635,20 @@ export default function Terminal() {
                             }
                         }}
                         onKeyDown={handleKeyDown}
-                        className="w-full h-full bg-transparent outline-none text-sm md:text-base text-terminal-text placeholder:text-terminal-muted caret-transparent p-0 border-0 font-mono"
+                        className="w-full h-full absolute inset-0 bg-transparent outline-none text-transparent placeholder:text-terminal-muted caret-transparent p-0 border-0 font-mono text-sm md:text-base z-20"
                         placeholder={uiStrings.terminal.placeholder}
                         autoFocus
                         spellCheck={false}
                         autoComplete="off"
                     />
-                    <span 
-                        className="absolute pointer-events-none w-2 h-4 bg-terminal-accent animate-blink"
-                        style={{ 
-                            left: `${input.length}ch`,
-                            marginLeft: input.length === 0 ? "0px" : "1px"
-                        }} 
-                    />
+                    
+                    <div className="absolute inset-0 flex items-center pointer-events-none z-10 font-mono text-sm md:text-base text-terminal-text whitespace-pre">
+                        <span>{input}</span>
+                        <span 
+                            className="w-2 h-4 bg-terminal-accent animate-blink shrink-0"
+                            style={{ marginLeft: input.length === 0 ? "0px" : "1px" }} 
+                        />
+                    </div>
                 </div>
             </form>
         </div>
