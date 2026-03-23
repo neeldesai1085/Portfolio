@@ -140,10 +140,10 @@ export default function Terminal() {
                     </p>
                     {commandsData.commands.map((c) => (
                         <div key={c.name} className="flex flex-col sm:flex-row gap-0 sm:gap-4">
-                            <span className="text-terminal-accent sm:w-32 shrink-0 font-mono text-base">
+                            <span className="text-terminal-accent sm:w-32 shrink-0 font-mono text-sm md:text-base">
                                 {c.usage}
                             </span>
-                            <span className="text-base opacity-70">
+                            <span className="text-sm md:text-base opacity-70">
                                 {c.description}
                             </span>
                         </div>
@@ -156,14 +156,14 @@ export default function Terminal() {
             type: "success",
             content: (
                 <div className="space-y-2">
-                    <p className="text-terminal-accent text-xl font-semibold">
+                    <p className="text-terminal-accent text-lg md:text-xl font-semibold">
                         {profile.name}
                     </p>
-                    <p className="text-base opacity-80">
+                    <p className="text-sm md:text-base opacity-80">
                         {profile.role} · {profile.tagline}
                     </p>
-                    <p className="text-base mt-2">{profile.longDescription}</p>
-                    <div className="flex flex-wrap gap-4 mt-3 text-base opacity-70">
+                    <p className="text-sm md:text-base mt-2">{profile.longDescription}</p>
+                    <div className="flex flex-wrap gap-4 mt-3 text-sm md:text-base opacity-70">
                         <span>📧 {profile.contact.email}</span>
                         <span>📱 {profile.contact.phone}</span>
                         <span>🌐 {profile.contact.linkedin}</span>
@@ -186,16 +186,16 @@ export default function Terminal() {
                             className="border-l-2 border-current pl-3 opacity-80"
                         >
                             <div className="flex items-center gap-2">
-                                <span className="text-terminal-accent font-mono text-base">
+                                <span className="text-terminal-accent font-mono text-sm md:text-base">
                                     {p.id}
                                 </span>
                                 {p.featured && (
-                                    <span className="text-base px-1.5 py-0.5 rounded bg-current/10">
+                                    <span className="text-sm md:text-base px-1.5 py-0.5 rounded bg-current/10">
                                         ★ featured
                                     </span>
                                 )}
                             </div>
-                            <p className="text-base font-medium">{p.title}</p>
+                            <p className="text-sm md:text-base font-medium">{p.title}</p>
                             <p className="text-sm opacity-60">
                                 {p.shortDescription}
                             </p>
@@ -242,10 +242,10 @@ export default function Terminal() {
                             if (!project) return null;
                             return (
                                 <div key={projectId} className="space-y-2">
-                                    <p className="text-terminal-accent text-xl font-semibold">
+                                    <p className="text-terminal-accent text-lg md:text-xl font-semibold">
                                         {project.title}
                                     </p>
-                                    <p className="text-base">
+                                    <p className="text-sm md:text-base">
                                         {project.detailedDescription}
                                     </p>
                                     <div className="mt-2">
@@ -263,7 +263,7 @@ export default function Terminal() {
                                             ))}
                                         </div>
                                     </div>
-                                    <p className="text-base mt-2">
+                                    <p className="text-sm md:text-base mt-2">
                                         <span className="opacity-60">
                                             Architecture:
                                         </span>{" "}
@@ -283,13 +283,13 @@ export default function Terminal() {
                 <div className="space-y-3">
                     {skills.categories.map((cat) => (
                         <div key={cat.name}>
-                            <p className="text-terminal-accent font-semibold text-base mb-1">
+                            <p className="text-terminal-accent font-semibold text-sm md:text-base mb-1">
                                 {cat.name}
                             </p>
                             {cat.items.map((s) => (
                                 <div
                                     key={s.id}
-                                    className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-base ml-2 mb-3 sm:mb-1"
+                                    className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm md:text-base ml-2 mb-3 sm:mb-1"
                                 >
                                     <span className="sm:w-28 shrink-0">
                                         {s.name}
@@ -344,7 +344,7 @@ export default function Terminal() {
         inspect: () => ({
             type: "info",
             content: (
-                <div className="space-y-1 text-base">
+                <div className="space-y-1 text-sm md:text-base">
                     <p className="text-terminal-accent font-semibold mb-1">
                         Runtime State
                     </p>
@@ -561,22 +561,22 @@ export default function Terminal() {
         >
             <div
                 ref={outputRef}
-                className="flex-1 overflow-y-auto p-4 space-y-2.5"
+                className="flex-1 overflow-y-auto p-3 md:p-4 space-y-2.5"
             >
                 {outputs.map((value, index) => (
                     <div key={index} className="animate-fade-in">
                         {value.type === "command" ? (
                             <div className="flex items-start gap-2">
-                                <span className="text-terminal-accent shrink-0 text-base">
+                                <span className="text-terminal-accent shrink-0 text-sm md:text-base">
                                     {uiStrings.terminal.prompt}
                                 </span>
-                                <span className="text-base">
+                                <span className="text-sm md:text-base">
                                     {value.content}
                                 </span>
                             </div>
                         ) : value.type === "error" ? (
                             <div
-                                className="text-base"
+                                className="text-sm md:text-base"
                                 style={{
                                     color: "var(--color-terminal-error)",
                                 }}
@@ -584,14 +584,14 @@ export default function Terminal() {
                                 {value.content}
                             </div>
                         ) : (
-                            <div className="text-base ">{value.content}</div>
+                            <div className="text-sm md:text-base ">{value.content}</div>
                         )}
                     </div>
                 ))}
             </div>
 
             {suggestions.length > 0 && (
-                <div className="px-4 py-1 border-t border-terminal-border bg-terminal-surface">
+                <div className="px-3 md:px-4 py-1.5 md:py-1 border-t border-terminal-border bg-terminal-surface">
                     <div className="flex flex-wrap gap-2">
                         {suggestions.slice(0, 6).map((value, index) => (
                             <button
@@ -612,9 +612,9 @@ export default function Terminal() {
 
             <form
                 onSubmit={handleSubmit}
-                className="flex items-center border-t border-terminal-border px-4 py-3 bg-terminal-surface relative"
+                className="flex items-center border-t border-terminal-border px-3 py-2 md:px-4 md:py-3 bg-terminal-surface relative"
             >
-                <span className="text-terminal-accent mr-2 text-base shrink-0">
+                <span className="text-terminal-accent mr-2 text-sm md:text-base shrink-0">
                     {uiStrings.terminal.prompt}
                 </span>
 
@@ -635,7 +635,7 @@ export default function Terminal() {
                             }
                         }}
                         onKeyDown={handleKeyDown}
-                        className="w-full h-full bg-transparent outline-none text-base text-terminal-text placeholder:text-terminal-muted caret-transparent p-0 border-0 font-mono"
+                        className="w-full h-full bg-transparent outline-none text-sm md:text-base text-terminal-text placeholder:text-terminal-muted caret-transparent p-0 border-0 font-mono"
                         placeholder={uiStrings.terminal.placeholder}
                         autoFocus
                         spellCheck={false}

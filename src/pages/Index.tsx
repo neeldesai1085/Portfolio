@@ -23,7 +23,7 @@ const Index = () => {
     }, [mode]);
 
     return (
-        <div className="h-screen flex flex-col overflow-hidden">
+        <div className="h-dvh flex flex-col overflow-hidden">
             <ProfileHeader />
             <main className="flex-1 overflow-hidden">
                 <div key={mode} className="h-full animate-fade-in">
