@@ -32,15 +32,23 @@ export const usePortfolioStore = create<PortfolioState>()(
             mode: getInitialMode(),
             contactOpen: false,
             outputs: [],
+            modeTransition: true,
             setTheme: (theme: AppTheme) => set({ theme }),
-            setMode: (mode: AppMode) => set({ mode }),
+            setMode: (mode: AppMode) =>
+                set((state) =>
+                    state.mode === mode
+                        ? state
+                        : { mode, modeTransition: true },
+                ),
             setContactOpen: (open: boolean) => set({ contactOpen: open }),
             setOutputs: (outputs) => set({ outputs }),
+            setModeTransition: (transition: boolean) => set({ modeTransition: transition }),
         }),
         {
             name: "portfolio-state",
             partialize: (state) => ({
                 theme: state.theme,
+                modeTransition: state.modeTransition,
             }),
         },
     ),

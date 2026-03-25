@@ -4,9 +4,10 @@ import ProfileHeader from "@/components/ProfileHeader";
 import ContactForm from "@/components/ContactForm";
 import Terminal from "@/components/dev/Terminal";
 import HRMode from "@/components/hr/HRMode";
+import ModeIntro from "@/components/ModeIntro";
 
 const Index = () => {
-    const { mode } = usePortfolioStore();
+    const { mode, modeTransition, setModeTransition } = usePortfolioStore();
 
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
@@ -21,6 +22,15 @@ const Index = () => {
             );
         }
     }, [mode]);
+
+    if (modeTransition) {
+        return (
+            <ModeIntro  
+                mode={mode}
+                onComplete={() => setModeTransition(false)}
+            />
+        );
+    }
 
     return (
         <div className="h-dvh flex flex-col overflow-hidden">

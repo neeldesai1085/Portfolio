@@ -13,8 +13,10 @@ export interface PortfolioState {
     mode: AppMode;
     contactOpen: boolean;
     outputs: OutputEntry[];
+    modeTransition: boolean;
     setTheme: (theme: AppTheme) => void;
     setMode: (mode: AppMode) => void;
     setContactOpen: (open: boolean) => void;
     setOutputs: (outputs: OutputEntry[]) => void;
+    setModeTransition: (transition: boolean) => void;
 }
