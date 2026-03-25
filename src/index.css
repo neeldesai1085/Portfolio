@@ -19,6 +19,7 @@
     --color-background: hsl(40 20% 97%);
     --color-border: hsl(40 12% 87%);
     --color-primary-foreground: hsl(0 0% 100%);
+    --color-terminal-success: hsl(142 60% 35%);
 }
 
 .dark {

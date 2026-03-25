@@ -2,7 +2,18 @@
     "terminal": {
         "welcomeMessage": "Welcome to my portfolio! Type 'help' to see a list of available commands.",
         "prompt": "neeld@portfolio:~$",
-        "placeholder": "Type a command..."
+        "placeholder": "Type a command...",
+        "bootLines": [
+            "> run portfolio.exe",
+            "> Loading modules...",
+            "> [profile] ✓",
+            "> [projects] ✓",
+            "> [skills] ✓",
+            "> [timeline] ✓",
+            "> [graph] ✓",
+            "> System ready.",
+            "> Type \"help\" to begin."
+        ]
     },
     "hrMode": {
         "helpTitle": "How to Navigate",
