@@ -14,8 +14,15 @@ export interface CommandResult {
 }
 
 export default function Terminal() {
-    const { setMode, setTheme, setContactOpen, outputs, setOutputs } =
-        usePortfolioStore();
+    const {
+        setMode,
+        setTheme,
+        setContactOpen,
+        outputs,
+        setOutputs,
+        theme,
+        mode,
+    } = usePortfolioStore();
 
     const [suggestions, setSuggestions] = useState<string[]>([]);
     const [input, setInput] = useState("");
@@ -139,7 +146,10 @@ export default function Terminal() {
                         Available Commands:
                     </p>
                     {commandsData.commands.map((c) => (
-                        <div key={c.name} className="flex flex-col sm:flex-row gap-0 sm:gap-4">
+                        <div
+                            key={c.name}
+                            className="flex flex-col sm:flex-row gap-0 sm:gap-4"
+                        >
                             <span className="text-terminal-accent sm:w-32 shrink-0 font-mono text-sm md:text-base">
                                 {c.usage}
                             </span>
@@ -162,7 +172,9 @@ export default function Terminal() {
                     <p className="text-sm md:text-base opacity-80">
                         {profile.role} · {profile.tagline}
                     </p>
-                    <p className="text-sm md:text-base mt-2">{profile.longDescription}</p>
+                    <p className="text-sm md:text-base mt-2">
+                        {profile.longDescription}
+                    </p>
                     <div className="flex flex-wrap gap-4 mt-3 text-sm md:text-base opacity-70">
                         <span>📧 {profile.contact.email}</span>
                         <span>📱 {profile.contact.phone}</span>
@@ -195,7 +207,9 @@ export default function Terminal() {
                                     </span>
                                 )}
                             </div>
-                            <p className="text-sm md:text-base font-medium">{p.title}</p>
+                            <p className="text-sm md:text-base font-medium">
+                                {p.title}
+                            </p>
                             <p className="text-sm opacity-60">
                                 {p.shortDescription}
                             </p>
@@ -380,6 +394,20 @@ export default function Terminal() {
                     content: <span>Usage: theme &lt;light|dark&gt;</span>,
                 };
             }
+            if (themeName === theme) {
+                return {
+                    type: "error",
+                    content: (
+                        <span>
+                            Theme already set to{" "}
+                            <span className="text-terminal-accent">
+                                {themeName}
+                            </span>
+                            .
+                        </span>
+                    ),
+                };
+            }
             return {
                 type: "success",
                 content: (
@@ -401,10 +429,18 @@ export default function Terminal() {
                     content: <span>Usage: mode &lt;hr|dev&gt;</span>,
                 };
             }
+            if (modeName === mode) {
+                return {
+                    type: "error",
+                    content: (
+                        <span>Already in <span className="text-terminal-accent">{modeName}</span> mode.</span>
+                    ),
+                };
+            }
             return {
                 type: "mode-switch",
                 content: (
-                    <span>Switching to {modeName.toUpperCase()} mode...</span>
+                    <span>Switching to <span className="text-terminal-accent">{modeName}</span> mode...</span>
                 ),
             };
         },
@@ -584,7 +620,9 @@ export default function Terminal() {
                                 {value.content}
                             </div>
                         ) : (
-                            <div className="text-sm md:text-base ">{value.content}</div>
+                            <div className="text-sm md:text-base ">
+                                {value.content}
+                            </div>
                         )}
                     </div>
                 ))}
@@ -641,12 +679,14 @@ export default function Terminal() {
                         spellCheck={false}
                         autoComplete="off"
                     />
-                    
+
                     <div className="absolute inset-0 flex items-center pointer-events-none z-10 font-mono text-sm md:text-base text-terminal-text whitespace-pre">
                         <span>{input}</span>
-                        <span 
+                        <span
                             className="w-2 h-4 bg-terminal-accent animate-blink shrink-0"
-                            style={{ marginLeft: input.length === 0 ? "0px" : "1px" }} 
+                            style={{
+                                marginLeft: input.length === 0 ? "0px" : "1px",
+                            }}
                         />
                     </div>
                 </div>
