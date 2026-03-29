@@ -286,6 +286,44 @@ export default function Terminal() {
                                         </span>{" "}
                                         {project.architectureNotes}
                                     </p>
+                                    <div className="text-sm md:text-base mt-2 space-y-1">
+                                        <div>
+                                            <span className="opacity-60">
+                                                GitHub:
+                                            </span>{" "}
+                                            {project.githubLink &&
+                                            project.githubLink !== "#" ? (
+                                                <a
+                                                    href={project.githubLink}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-terminal-accent underline"
+                                                >
+                                                    {project.githubLink}
+                                                </a>
+                                            ) : (
+                                                <span className="opacity-60">
+                                                    Not available
+                                                </span>
+                                            )}
+                                        </div>
+                                        {project.liveLink &&
+                                            project.liveLink !== "#" && (
+                                                <div>
+                                                    <span className="opacity-60">
+                                                        Live:
+                                                    </span>{" "}
+                                                    <a
+                                                        href={project.liveLink}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-terminal-accent underline"
+                                                    >
+                                                        {project.liveLink}
+                                                    </a>
+                                                </div>
+                                            )}
+                                    </div>
                                 </div>
                             );
                         })}

@@ -11,7 +11,7 @@
         {
             "id": "t2",
             "versionTag": "v1.5",
-            "title": "Project on Data Structure Visualization",
+            "title": "Data Structure Visualizer",
             "description": "Developed an interactive visualization tool to help students understand complex data structures and algorithms, using user controlled inputs, simultaneous code highlighting and animations.",
             "time": "July 2024",
             "type": "projects"

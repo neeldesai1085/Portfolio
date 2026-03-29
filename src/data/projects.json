@@ -1,38 +1,55 @@
 {
     "items": [
         {
+            "id": "secure-secrets-manager",
+            "title": "Secure Secrets Manager",
+            "shortDescription": "Encrypted secret storage and runtime injection system.",
+            "detailedDescription": "Architected and developed a full-stack secret management system to securely store and share sensitive configuration values across multiple projects. Designed support for two isolated environments (development and production), ensuring proper segregation of secrets. Integrated encrypted storage using SHA-256-based mechanisms and implemented a secure runtime injection system that enables a two-step usage flow, preventing direct exposure of raw environment variables. Built RESTful APIs following a clean MVC architecture to handle core operations including storing, retrieving, and injecting secrets, ensuring scalability, maintainability, and secure access patterns across services.",
+            "stack": ["TypeScript", "React", "Next.js", "Spring Boot"],
+            "architectureNotes": "MVC-based REST API design with encrypted storage and controlled runtime injection. Structured around secure data handling, environment isolation, and modular service layers.",
+            "githubLink": "https://github.com/ishikachhajed/Envoy",
+            "liveLink": "#",
+            "featured": false
+        },
+        {
+            "id": "ml-package-manager",
+            "title": "Node.js ML Package Manager",
+            "shortDescription": "CLI-based package manager for ONNX ML models.",
+            "detailedDescription": "Built a CLI-driven package manager for Node.js focused on distributing and managing ONNX-based machine learning models. Implemented support for multiple commands including install, publish, and update, enabling streamlined developer workflows. Designed a wrapper–fetch architecture that allows lightweight initial installations, followed by a two-stage model loading process where model binaries are fetched dynamically from Cloudflare R2 at runtime. Developed a full-stack platform integrating PostgreSQL (Neon) for metadata management and Cloudflare R2 for scalable object storage, supporting efficient storage, indexing, and retrieval of ML model files with optimized query performance.",
+            "stack": [
+                "TypeScript",
+                "React",
+                "Tailwind CSS",
+                "Node.js",
+                "Express.js",
+                "PostgreSQL",
+                "Cloudflare R2"
+            ],
+            "architectureNotes": "Wrapper–fetch system with two-stage loading (local package + remote fetch). Backend integrates PostgreSQL for structured data and R2 for distributed model storage.",
+            "githubLink": "https://github.com/neeldesai1085/mlnpm",
+            "liveLink": "#",
+            "featured": false
+        },
+        {
             "id": "portfolio-system",
-            "title": "Dual-Mode Portfolio",
-            "shortDescription": "A polymorphic portfolio with terminal and graph interfaces.",
-            "detailedDescription": "A single React + TypeScript runtime system rendering two completely different interaction models powered by the same structured JSON data layer. Demonstrates UI abstraction, runtime state management, and data-driven rendering.",
-            "stack": ["React", "TypeScript", "Zustand", "Tailwind CSS", "Vite"],
-            "architectureNotes": "Mode-based rendering with shared data layer. Command engine for terminal, graph engine for node visualization. All content driven by JSON files.",
-            "githubLink": "https://github.com/neeldesai/portfolio",
-            "liveLink": "#",
+            "title": "Personal Portfolio Website",
+            "shortDescription": "Dual-interface portfolio with CLI and visual graph.",
+            "detailedDescription": "Engineered a highly interactive personal portfolio system featuring dual interaction modes—a traditional visual interface and a command-line interface (CLI)—built using React and TypeScript. Implemented support for multiple CLI commands, enabling fast and intuitive navigation through portfolio content. Designed and developed an interactive draggable mind-map visualization that organizes multiple entities and relationships, allowing users to explore content dynamically. Built the entire system on a fully data-driven architecture using JSON, enabling dynamic content updates without requiring code changes, demonstrating strong separation of data and presentation layers.",
+            "stack": ["JavaScript", "React", "Tailwind CSS"],
+            "architectureNotes": "Dual-mode rendering system with shared JSON data layer. Includes command engine for CLI interactions and graph engine for dynamic mind-map visualization.",
+            "githubLink": "https://github.com/neeldesai1085/Portfolio",
+            "liveLink": "https://portfolio-neel-desai.vercel.app/",
             "featured": true
         },
         {
-            "id": "component-library",
-            "title": "UI Component Library",
-            "shortDescription": "A typed, themeable component system with design tokens.",
-            "detailedDescription": "Built a comprehensive React component library with full TypeScript support, design token system, and automated documentation. Includes 40+ components with accessibility built in.",
-            "stack": ["React", "TypeScript", "Storybook", "CSS Modules"],
-            "architectureNotes": "Compound component pattern with context-based theming. Automated visual regression testing with Chromatic.",
-            "metrics": { "lighthouse": 98, "bundleSize": "32kb" },
-            "githubLink": "https://github.com/neeldesai/ui-lib",
-            "liveLink": "#",
-            "featured": true
-        },
-        {
-            "id": "state-machine-form",
-            "title": "State Machine Forms",
-            "shortDescription": "Form engine powered by XState finite state machines.",
-            "detailedDescription": "A declarative form builder that uses finite state machines to manage complex multi-step form flows. Supports conditional logic, validation, and async submissions.",
-            "stack": ["React", "XState", "TypeScript", "Zod"],
-            "architectureNotes": "Each form is a state machine definition. Transitions handle validation, field visibility, and submission. Zero re-renders on field changes.",
-            "metrics": { "lighthouse": 92, "bundleSize": "28kb" },
-            "githubLink": "https://github.com/neeldesai/sm-forms",
-            "liveLink": "#",
+            "id": "algo-lens",
+            "title": "Data Structure Visualizer",
+            "shortDescription": "Interactive platform visualizing data structures and algorithms.",
+            "detailedDescription": "Built AlgoLens, a comprehensive multi-page application designed to visualize data structures and algorithms interactively. Developed over 20+ pages covering 25+ data structures and algorithms using HTML, CSS, JavaScript, and Prism.js for syntax highlighting. Implemented real-time synchronization between visualizations and corresponding Java code implementations, enabling users to better understand underlying logic and significantly improving concept retention. Designed a fully responsive UI optimized for multiple screen sizes, ensuring smooth interaction and reduced user effort across multiple device types.",
+            "stack": ["HTML", "CSS", "JavaScript", "Java"],
+            "architectureNotes": "Multi-page architecture with synchronized visualization and code rendering. Focused on real-time interaction, responsive design, and educational clarity.",
+            "githubLink": "https://github.com/neeldesai1085/AlgoLens",
+            "liveLink": "https://neeldesai1085.github.io/AlgoLens/",
             "featured": false
         }
     ]

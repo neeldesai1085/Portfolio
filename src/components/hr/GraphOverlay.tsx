@@ -131,18 +131,33 @@ export default function GraphOverlay({ type, data, onClose }: Props) {
                                     </div>
                                 )}
 
-                                <div className="flex gap-2 pt-4">
+                                <div className="flex flex-wrap gap-2 pt-4">
                                     {data.githubLink &&
-                                        data.githubLink !== "#" && (
-                                            <a
-                                                href={data.githubLink}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity"
-                                            >
-                                                <Github size={16} /> View Source
-                                            </a>
-                                        )}
+                                    data.githubLink !== "#" ? (
+                                        <a
+                                            href={data.githubLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity"
+                                        >
+                                            <Github size={16} /> View Source
+                                        </a>
+                                    ) : (
+                                        <span className="flex items-center gap-2 bg-muted text-muted-foreground px-4 py-2 rounded-lg font-medium">
+                                            <Github size={16} /> GitHub
+                                            unavailable
+                                        </span>
+                                    )}
+                                    {data.liveLink && data.liveLink !== "#" && (
+                                        <a
+                                            href={data.liveLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg font-medium hover:bg-muted transition-colors"
+                                        >
+                                            <ExternalLink size={16} /> Live Demo
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         )}
