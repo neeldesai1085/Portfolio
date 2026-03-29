@@ -1,35 +1,212 @@
 {
     "categories": [
         {
+            "name": "Programming Languages",
+            "items": [
+                {
+                    "id": "c",
+                    "name": "C",
+                    "description": "Comfortable with low-level memory concepts, pointers, and efficient procedural implementations for algorithmic problems."
+                },
+                {
+                    "id": "java",
+                    "name": "Java",
+                    "description": "Strong grasp of OOP design, collections, and writing clean, maintainable code for large-scale applications."
+                },
+                {
+                    "id": "python",
+                    "name": "Python",
+                    "description": "Proficient in Python syntax and libraries like numpy, pandas, matplotlib and scikit-learn for data manipulation, analysis, and machine learning tasks."
+                },
+                {
+                    "id": "javascript",
+                    "name": "JavaScript",
+                    "description": "Modern ES features, asynchronous programming, and browser APIs for dynamic, interactive web experiences."
+                },
+                {
+                    "id": "typescript",
+                    "name": "TypeScript",
+                    "description": "Type-safe codebases with generics and utility types to improve scalability and developer confidence."
+                }
+            ]
+        },
+        {
             "name": "Frontend",
             "items": [
-                { 
-                    "id": "react", 
-                    "name": "React", 
-                    "proficiencyLevel": 92, 
-                    "description": "Component architecture, hooks, concurrent features, server components.", 
-                    "relatedProjects": ["portfolio-system", "component-library"] 
+                {
+                    "id": "react",
+                    "name": "React.js",
+                    "description": "Component-driven UI architecture, hooks, state management patterns, and accessible interface building."
                 },
-                { 
-                    "id": "typescript", 
-                    "name": "TypeScript", 
-                    "proficiencyLevel": 90,
-                    "description": "Strict typing, generics, utility types, type-safe APIs.", 
-                    "relatedProjects": ["portfolio-system", "state-machine-form"] 
+                {
+                    "id": "nextjs",
+                    "name": "Next.js",
+                    "description": "Routing, SSR/ISR concepts, and app structure for production-grade React applications."
                 },
-                { 
-                    "id": "css", 
-                    "name": "CSS / Tailwind", 
-                    "proficiencyLevel": 88, 
-                    "description": "Design systems, responsive layouts, animations, CSS-in-JS.", 
-                    "relatedProjects": ["component-library"] 
+                {
+                    "id": "html5",
+                    "name": "HTML5",
+                    "description": "Semantic markup, accessibility foundations, and SEO-friendly page structure."
                 },
-                { 
-                    "id": "nextjs", 
-                    "name": "Next.js", 
-                    "proficiencyLevel": 80, 
-                    "description": "App router, SSR, ISR, API routes, middleware.", 
-                    "relatedProjects": [] 
+                {
+                    "id": "css3",
+                    "name": "CSS3",
+                    "description": "Responsive layouts, modern styling techniques, and custom animations for polished interfaces."
+                },
+                {
+                    "id": "tailwind",
+                    "name": "Tailwind CSS",
+                    "description": "Utility-first styling, design tokens, and rapid UI development with consistent visual systems."
+                }
+            ]
+        },
+        {
+            "name": "Backend",
+            "items": [
+                {
+                    "id": "nodejs",
+                    "name": "Node.js",
+                    "description": "Building fast, scalable server-side applications with event-driven architecture."
+                },
+                {
+                    "id": "express",
+                    "name": "Express.js",
+                    "description": "RESTful API development with middleware design, routing, and error handling."
+                },
+                {
+                    "id": "spring-boot",
+                    "name": "Spring Boot",
+                    "description": "Java-based backend services with dependency injection, configuration, and REST APIs."
+                },
+                {
+                    "id": "rest-api",
+                    "name": "REST API",
+                    "description": "API design principles, resource modeling, and predictable HTTP interfaces."
+                },
+                {
+                    "id": "jwt",
+                    "name": "JWT Authentication",
+                    "description": "Secure token-based authentication flows and session handling for modern apps."
+                }
+            ]
+        },
+        {
+            "name": "Databases",
+            "items": [
+                {
+                    "id": "postgresql",
+                    "name": "PostgreSQL",
+                    "description": "Relational data modeling, SQL querying, and transactional consistency for backend systems."
+                },
+                {
+                    "id": "mongodb",
+                    "name": "MongoDB",
+                    "description": "Document-based data storage, flexible schemas, and aggregation workflows."
+                },
+                {
+                    "id": "neon",
+                    "name": "Neon",
+                    "description": "Serverless Postgres deployments with modern branching workflows and easy cloud provisioning."
+                }
+            ]
+        },
+        {
+            "name": "Cloud & Platforms",
+            "items": [
+                {
+                    "id": "vercel",
+                    "name": "Vercel",
+                    "description": "Fast frontend deployments, previews, and optimized hosting for React apps."
+                },
+                {
+                    "id": "render",
+                    "name": "Render",
+                    "description": "Managed hosting for APIs and web services with automated deploy pipelines."
+                },
+                {
+                    "id": "aws",
+                    "name": "AWS",
+                    "description": "Core cloud concepts like compute, storage, and IAM-based access control."
+                },
+                {
+                    "id": "cloudflare-r2",
+                    "name": "Cloudflare R2",
+                    "description": "Object storage for large assets with predictable cost and API compatibility."
+                }
+            ]
+        },
+        {
+            "name": "Tools",
+            "items": [
+                {
+                    "id": "git",
+                    "name": "Git",
+                    "description": "Version control workflows, branching strategies, and conflict resolution."
+                },
+                {
+                    "id": "github",
+                    "name": "GitHub",
+                    "description": "Repository management, pull request workflows, and project collaboration."
+                },
+                {
+                    "id": "vscode",
+                    "name": "VS Code",
+                    "description": "Daily development environment with extensions, debugging, and productivity tooling."
+                },
+                {
+                    "id": "postman",
+                    "name": "Postman",
+                    "description": "API testing, collections, and automated request workflows."
+                },
+                {
+                    "id": "npm",
+                    "name": "npm",
+                    "description": "Package management, scripts, and dependency versioning for JS projects."
+                },
+                {
+                    "id": "maven",
+                    "name": "Maven",
+                    "description": "Java project builds, dependency management, and standardized packaging."
+                },
+                {
+                    "id": "linux-cli",
+                    "name": "Linux CLI",
+                    "description": "Command-line workflows for file management, scripting, and system diagnostics."
+                }
+            ]
+        },
+        {
+            "name": "Core CS Concepts",
+            "items": [
+                {
+                    "id": "dsa",
+                    "name": "Data Structures & Algorithms",
+                    "description": "Complexity analysis and algorithmic thinking applied to real-world problem solving."
+                },
+                {
+                    "id": "oop",
+                    "name": "OOP",
+                    "description": "Object modeling, encapsulation, and design principles for maintainable systems."
+                },
+                {
+                    "id": "dbms",
+                    "name": "DBMS",
+                    "description": "Relational theory, normalization, transactions, and query optimization basics."
+                },
+                {
+                    "id": "os",
+                    "name": "OS",
+                    "description": "Process management, memory handling, and concurrency fundamentals."
+                },
+                {
+                    "id": "computer-networks",
+                    "name": "Computer Networks",
+                    "description": "Networking layers, protocols, and how data moves across the web."
+                },
+                {
+                    "id": "cloud-computing",
+                    "name": "Cloud Computing",
+                    "description": "Scalable architecture concepts, service models, and distributed system basics."
                 }
             ]
         }

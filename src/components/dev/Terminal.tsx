@@ -306,24 +306,14 @@ export default function Terminal() {
                             {cat.items.map((s) => (
                                 <div
                                     key={s.id}
-                                    className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm md:text-base ml-2 mb-3 sm:mb-1"
+                                    className="flex flex-col gap-1 text-sm md:text-base ml-2 mb-3"
                                 >
-                                    <span className="sm:w-28 shrink-0">
+                                    <span className="font-medium">
                                         {s.name}
                                     </span>
-                                    <div className="flex items-center gap-3 w-full sm:flex-1">
-                                        <div className="flex-1 h-1.5 rounded-full bg-current/10 max-w-48">
-                                            <div
-                                                className="h-full rounded-full bg-current/50"
-                                                style={{
-                                                    width: `${s.proficiencyLevel}%`,
-                                                }}
-                                            />
-                                        </div>
-                                        <span className="text-sm opacity-50 w-8 shrink-0">
-                                            {s.proficiencyLevel}%
-                                        </span>
-                                    </div>
+                                    <span className="text-sm opacity-70">
+                                        {s.description}
+                                    </span>
                                 </div>
                             ))}
                         </div>

@@ -34,14 +34,12 @@ function getChildrenForCategory(
         }));
     }
     if (categoryId === "skills") {
-        return skills.categories
-            .flatMap((c) => c.items)
-            .map((s) => ({
-                id: s.id,
-                label: s.name,
-                type: "skill",
-                data: s,
-            }));
+        return skills.categories.map((c) => ({
+            id: `skills-${c.name.toLowerCase().replace(/\s+/g, "-")}`,
+            label: c.name,
+            type: "skill",
+            data: c,
+        }));
     }
     if (categoryId === "summary") {
         return summary.entries.map((t, index) => ({
@@ -342,36 +340,35 @@ export default function GraphCanvas({
                         n.id === node.id ? { ...n, expanded: false } : n,
                     )
                     .filter((n) => n.parentId !== node.id);
-            } else {
-                const childrenData = getChildrenForCategory(node.id);
-
-                const w = window.innerWidth;
-                const h = window.innerHeight;
-
-                const existingList = currentNodes.map((n) => ({
-                    x: n.x,
-                    y: n.y,
-                }));
-
-                const newChildren = childrenData.map((child) => {
-                    const pos = getRandomValidPosition(existingList, w, h);
-                    existingList.push(pos);
-                    return {
-                        ...child,
-                        parentId: node.id,
-                        x: pos.x,
-                        y: pos.y,
-                        colorObj: node.colorObj,
-                    };
-                });
-
-                return [
-                    ...currentNodes.map((n) =>
-                        n.id === node.id ? { ...n, expanded: true } : n,
-                    ),
-                    ...newChildren,
-                ];
             }
+
+            const childrenData = getChildrenForCategory(node.id);
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+
+            const existingList = currentNodes.map((n) => ({
+                x: n.x,
+                y: n.y,
+            }));
+
+            const newChildren = childrenData.map((child) => {
+                const pos = getRandomValidPosition(existingList, w, h);
+                existingList.push(pos);
+                return {
+                    ...child,
+                    parentId: node.id,
+                    x: pos.x,
+                    y: pos.y,
+                    colorObj: node.colorObj,
+                };
+            });
+
+            return [
+                ...currentNodes.map((n) =>
+                    n.id === node.id ? { ...n, expanded: true } : n,
+                ),
+                ...newChildren,
+            ];
         });
     };
 
