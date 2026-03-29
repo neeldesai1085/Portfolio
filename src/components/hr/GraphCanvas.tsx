@@ -50,10 +50,10 @@ function getChildrenForCategory(
         }));
     }
     if (categoryId === "experience") {
-        return experience.entries.map((t) => ({
+        return experience.map((t) => ({
             id: t.id.toString(),
             label: t.title,
-            type: "summary",
+            type: "project",
             data: t,
         }));
     }

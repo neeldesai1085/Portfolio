@@ -81,7 +81,7 @@ export default function Terminal() {
                     .map((s) => `${cmd} ${s}`);
             }
 
-            if (cmd === "open") {
+            if (cmd === "pro-open") {
                 const tokens = partial.trim().split(/\s+/).filter(Boolean);
                 const taken = tokens.slice(0, -1);
                 const last = tokens.length > 0 ? tokens[tokens.length - 1] : "";
@@ -89,7 +89,18 @@ export default function Terminal() {
                     .filter(
                         (p) => p.id.startsWith(last) && !taken.includes(p.id),
                     )
-                    .map((p) => `open ${[...taken, p.id].join(" ")}`);
+                    .map((p) => `pro-open ${[...taken, p.id].join(" ")}`);
+            }
+
+            if (cmd === "ex-open") {
+                const tokens = partial.trim().split(/\s+/).filter(Boolean);
+                const taken = tokens.slice(0, -1);
+                const last = tokens.length > 0 ? tokens[tokens.length - 1] : "";
+                return experience
+                    .filter(
+                        (e) => e.id.startsWith(last) && !taken.includes(e.id),
+                    )
+                    .map((e) => `ex-open ${[...taken, e.id].join(" ")}`);
             }
 
             return [];
@@ -219,13 +230,13 @@ export default function Terminal() {
                         </div>
                     ))}
                     <p className="text-sm opacity-50 mt-2">
-                        Use `open &lt;id&gt;` to view details
+                        Use `pro-open &lt;id&gt;` to view details
                     </p>
                 </div>
             ),
         }),
 
-        open: (args) => {
+        "pro-open": (args) => {
             const uniqueIds = args.filter(
                 (id, idx) => args.indexOf(id) === idx,
             );
@@ -387,26 +398,103 @@ export default function Terminal() {
         experience: () => ({
             type: "success",
             content: (
-                <div className="space-y-2">
-                    {[...experience.entries].reverse().map((e) => (
-                        <div key={e.id} className="flex gap-3 text-sm">
-                            <span className="text-terminal-accent font-mono w-12 shrink-0">
-                                {e.versionTag}
-                            </span>
-                            <span className="opacity-50 w-10 shrink-0">
-                                {e.time}
-                            </span>
-                            <div>
-                                <p className="font-medium">{e.title}</p>
-                                <p className="text-sm opacity-60">
-                                    {e.description}
-                                </p>
+                <div className="space-y-3">
+                    <p className="text-terminal-accent font-semibold">
+                        Experience ({experience.length})
+                    </p>
+                    {experience.map((e) => (
+                        <div
+                            key={e.id}
+                            className="border-l-2 border-current pl-3 opacity-80"
+                        >
+                            <div className="flex items-center gap-2">
+                                <span className="text-terminal-accent font-mono text-sm md:text-base">
+                                    {e.id}
+                                </span>
                             </div>
+                            <p className="text-sm md:text-base font-medium">
+                                {e.title}
+                            </p>
+                            <p className="text-sm opacity-60">
+                                {e.shortDescription}
+                            </p>
                         </div>
                     ))}
+                    <p className="text-sm opacity-50 mt-2">
+                        Use `ex-open &lt;id&gt;` to view details
+                    </p>
                 </div>
             ),
         }),
+
+        "ex-open": (args) => {
+            const uniqueIds = args.filter(
+                (id, idx) => args.indexOf(id) === idx,
+            );
+            const invalidIds = uniqueIds.filter(
+                (id) => !experience.some((e) => e.id === id),
+            );
+
+            if (invalidIds.length > 0) {
+                return {
+                    type: "error",
+                    content: (
+                        <span>
+                            Experience not found: "{invalidIds.join(", ")}". Type{" "}
+                            <span className="text-terminal-accent">
+                                experience
+                            </span>{" "}
+                            to list available items.
+                        </span>
+                    ),
+                };
+            }
+
+            return {
+                type: "success",
+                content: (
+                    <div className="space-y-4">
+                        {uniqueIds.map((experienceId) => {
+                            const entry = experience.find(
+                                (e) => e.id === experienceId,
+                            );
+                            if (!entry) return null;
+                            return (
+                                <div key={experienceId} className="space-y-2">
+                                    <p className="text-terminal-accent text-lg md:text-xl font-semibold">
+                                        {entry.title}
+                                    </p>
+                                    <p className="text-sm md:text-base">
+                                        {entry.detailedDescription}
+                                    </p>
+                                    <div className="mt-2">
+                                        <p className="text-sm text-terminal-accent mb-1">
+                                            Stack:
+                                        </p>
+                                        <div className="flex flex-wrap gap-1.5">
+                                            {entry.stack.map((t) => (
+                                                <span
+                                                    key={t}
+                                                    className="text-sm px-2 py-0.5 rounded border border-current/20"
+                                                >
+                                                    {t}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <p className="text-sm md:text-base mt-2">
+                                        <span className="opacity-60">
+                                            Architecture:
+                                        </span>{" "}
+                                        {entry.architectureNotes}
+                                    </p>
+                                </div>
+                            );
+                        })}
+                    </div>
+                ),
+            };
+        },
 
         initiatives: () => ({
             type: "success",
@@ -414,9 +502,6 @@ export default function Terminal() {
                 <div className="space-y-2">
                     {[...initiatives.entries].reverse().map((e) => (
                         <div key={e.id} className="flex gap-3 text-sm">
-                            <span className="text-terminal-accent font-mono w-12 shrink-0">
-                                {e.versionTag}
-                            </span>
                             <span className="opacity-50 w-10 shrink-0">
                                 {e.time}
                             </span>
@@ -438,9 +523,6 @@ export default function Terminal() {
                 <div className="space-y-2">
                     {[...academics.entries].reverse().map((e) => (
                         <div key={e.id} className="flex gap-3 text-sm">
-                            <span className="text-terminal-accent font-mono w-12 shrink-0">
-                                {e.versionTag}
-                            </span>
                             <span className="opacity-50 w-10 shrink-0">
                                 {e.time}
                             </span>
@@ -612,7 +694,7 @@ export default function Terminal() {
                 }
             }
 
-            if (cmd === "open" && args.length !== 1) {
+            if (cmd === "pro-open" && args.length !== 1) {
                 if (args.length < 1) {
                     return {
                         type: "error",
@@ -621,7 +703,21 @@ export default function Terminal() {
                 }
             }
 
-            if (cmd !== "open" && !hasSubcommands && args.length > 1) {
+            if (cmd === "ex-open" && args.length !== 1) {
+                if (args.length < 1) {
+                    return {
+                        type: "error",
+                        content: <span>Usage: {cmdDef.usage}</span>,
+                    };
+                }
+            }
+
+            if (
+                cmd !== "pro-open" &&
+                cmd !== "ex-open" &&
+                !hasSubcommands &&
+                args.length > 1
+            ) {
                 return {
                     type: "error",
                     content: <span>Usage: {cmdDef.usage}</span>,

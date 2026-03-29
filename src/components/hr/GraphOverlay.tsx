@@ -141,34 +141,39 @@ export default function GraphOverlay({ type, data, onClose }: Props) {
                                     </div>
                                 )}
 
-                                <div className="flex flex-wrap gap-2 pt-4">
-                                    {data.githubLink &&
-                                    data.githubLink !== "#" ? (
-                                        <a
-                                            href={data.githubLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity"
-                                        >
-                                            <Github size={16} /> View Source
-                                        </a>
-                                    ) : (
-                                        <span className="flex items-center gap-2 bg-muted text-muted-foreground px-4 py-2 rounded-lg font-medium">
-                                            <Github size={16} /> GitHub
-                                            unavailable
-                                        </span>
-                                    )}
-                                    {data.liveLink && data.liveLink !== "#" && (
-                                        <a
-                                            href={data.liveLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg font-medium hover:bg-muted transition-colors"
-                                        >
-                                            <ExternalLink size={16} /> Live Demo
-                                        </a>
-                                    )}
-                                </div>
+                                {(data.githubLink !== undefined ||
+                                    data.liveLink !== undefined) && (
+                                    <div className="flex flex-wrap gap-2 pt-4">
+                                        {data.githubLink &&
+                                        data.githubLink !== "#" ? (
+                                            <a
+                                                href={data.githubLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity"
+                                            >
+                                                <Github size={16} /> View Source
+                                            </a>
+                                        ) : (
+                                            <span className="flex items-center gap-2 bg-muted text-muted-foreground px-4 py-2 rounded-lg font-medium">
+                                                <Github size={16} /> GitHub
+                                                unavailable
+                                            </span>
+                                        )}
+                                        {data.liveLink &&
+                                            data.liveLink !== "#" && (
+                                                <a
+                                                    href={data.liveLink}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg font-medium hover:bg-muted transition-colors"
+                                                >
+                                                    <ExternalLink size={16} />
+                                                    Live Demo
+                                                </a>
+                                            )}
+                                    </div>
+                                )}
                             </div>
                         )}
 
@@ -193,9 +198,11 @@ export default function GraphOverlay({ type, data, onClose }: Props) {
                         {type === "summary" && (
                             <div className="space-y-4 text-sm text-card-foreground">
                                 <div className="flex items-center gap-3 border-b border-border/50 pb-4">
-                                    <div className="px-2.5 py-1 bg-primary/10 text-primary border border-primary/20 rounded font-mono font-bold text-xs">
-                                        {data.versionTag}
-                                    </div>
+                                    {data.type && data.versionTag && (
+                                        <div className="px-2.5 py-1 bg-primary/10 text-primary border border-primary/20 rounded font-mono font-bold text-xs">
+                                            {data.versionTag}
+                                        </div>
+                                    )}
                                     <div className="text-muted-foreground font-semibold flex items-center gap-1.5">
                                         <div className="w-1.5 h-1.5 rounded-full bg-primary/50"></div>
                                         {data.time}
@@ -205,12 +212,6 @@ export default function GraphOverlay({ type, data, onClose }: Props) {
                                 <p className="leading-relaxed opacity-95 text-base">
                                     {data.description}
                                 </p>
-
-                                <div className="pt-2">
-                                    <span className="inline-flex items-center px-2 py-1 rounded text-[10px] font-semibold bg-muted text-muted-foreground uppercase tracking-wider">
-                                        {data.type} phase
-                                    </span>
-                                </div>
                             </div>
                         )}
                     </div>

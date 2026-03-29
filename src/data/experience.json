@@ -1,25 +1,26 @@
-{
-    "entries": [
-        {
-            "id": "e1",
-            "versionTag": "v2.0",
-            "title": "Business Operation Internship",
-            "description": "Worked at Cloudraft Technologies Pvt. Ltd. gaining experience in working with APIs and creation of real-world deployments. Contributed to the development of a custom LMS for a client, using Frappe framework and Python.",
-            "time": "March 2025"
-        },
-        {
-            "id": "e2",
-            "versionTag": "v3.0",
-            "title": "Frontend Development Internship",
-            "description": "Gained hands-on experience in frontend development at Assemble, contributing to the design and implementation of a responsive UI for an Esports platform. Developed reusable components and structured layouts to ensure a seamless user experience across devices.",
-            "time": "July 2025"
-        },
-        {
-            "id": "e3",
-            "versionTag": "v4.0",
-            "title": "Full Stack Development Internship",
-            "description": "Interned at IIT Ropar, contributing to the development of an educational platform for students with AI monitoring system. Worked on both frontend and backend tasks, including database management, API development and UI design to enhance the learning experience for users.",
-            "time": "Jan 2026"
-        }
-    ]
-}
+[
+    {
+        "id": "cloudraft-lms",
+        "title": "Business Operation Internship – LMS System",
+        "shortDescription": "Custom LMS development and automation using Frappe and APIs.",
+        "detailedDescription": "Worked at Cloudraft Technologies Pvt. Ltd., contributing to the development and deployment of a custom LMS built with the Frappe framework and Python. Designed and structured multiple training courses for Charcoal Eats outlets, enabling efficient progress tracking for a large number of users. Automated critical workflows such as password resets using GitHub Actions and REST APIs, significantly reducing manual operational overhead. Managed large-scale content uploads including SOP documents and streamlined onboarding by integrating Frappe APIs, improving overall system efficiency and usability.",
+        "stack": ["Python", "Frappe", "REST APIs", "GitHub Actions"],
+        "architectureNotes": "LMS built on Frappe framework with API-driven automation for user management and workflows. Focus on operational efficiency and scalable content delivery."
+    },
+    {
+        "id": "assemble-esports-ui",
+        "title": "Frontend Development Internship – Esports Platform",
+        "shortDescription": "Scalable and responsive UI for an Esports platform.",
+        "detailedDescription": "Worked at Assemble, developing a full-featured Esports platform UI using React and JavaScript. Built and structured multiple pages to support user onboarding and engagement flows. Developed a reusable component system using React and Tailwind CSS, ensuring modularity and scalability for future feature expansion. Designed responsive layouts using CSS Flexbox and Grid, delivering consistent performance and user experience across all device types.",
+        "stack": ["JavaScript", "React", "Tailwind CSS"],
+        "architectureNotes": "Component-driven frontend architecture with reusable UI system. Emphasis on responsive design and scalable layout structuring."
+    },
+    {
+        "id": "iit-ropar-platform",
+        "title": "Full Stack Development Internship – Educational Platform",
+        "shortDescription": "Full-stack learning platform with quizzes and leaderboard system.",
+        "detailedDescription": "Interned at IIT Ropar, contributing to the development of a scalable educational platform using React, Node.js, and PostgreSQL. Engineered full-stack features across multiple courses, supporting high concurrent student activity. Built a quiz delivery and progress tracking system to enable structured assessments and performance monitoring. Designed and optimized PostgreSQL database schemas, including a leaderboard system to rank users across courses. Collaborated in an agile environment, working across frontend and backend to improve system performance, scalability, and user experience.",
+        "stack": ["React", "Node.js", "PostgreSQL", "Express.js"],
+        "architectureNotes": "Full-stack architecture with REST APIs and relational database design. Includes quiz engine, progress tracking, and leaderboard system with scalable data handling."
+    }
+]

@@ -16,9 +16,9 @@
             "usage": "projects"
         },
         {
-            "name": "open",
+            "name": "pro-open",
             "description": "View project details",
-            "usage": "open <project-id>",
+            "usage": "pro-open <project-id>",
             "hasArgs": true
         },
         {
@@ -35,6 +35,12 @@
             "name": "experience",
             "description": "Show experience entries",
             "usage": "experience"
+        },
+        {
+            "name": "ex-open",
+            "description": "View experience details",
+            "usage": "ex-open <experience-id>",
+            "hasArgs": true
         },
         {
             "name": "initiatives",
