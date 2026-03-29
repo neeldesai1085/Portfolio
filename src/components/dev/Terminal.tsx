@@ -333,7 +333,7 @@ export default function Terminal() {
             type: "success",
             content: (
                 <div className="space-y-2">
-                    {summary.entries.map((e) => (
+                    {[...summary.entries].reverse().map((e) => (
                         <div key={e.id} className="flex gap-3 text-sm">
                             <span className="text-terminal-accent font-mono w-12 shrink-0">
                                 {e.versionTag}
