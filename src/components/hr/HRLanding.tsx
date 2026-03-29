@@ -110,14 +110,14 @@ export default function HRMode({
                 <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
                     <a
                         href={`mailto:${profile.contact.email}`}
-                        className="inline-flex items-center gap-2 rounded-full border border-border bg-gradient-to-r from-card to-muted px-4 py-2 text-sm text-foreground shadow-sm hover:bg-muted transition-colors"
+                        className="inline-flex items-center gap-2 rounded-full border border-border bg-linear-to-r from-card to-muted px-4 py-2 text-sm text-foreground shadow-sm hover:bg-muted transition-colors"
                     >
                         <Mail className="h-4 w-4 text-primary" />
                         {profile.contact.email}
                     </a>
                     <a
                         href={`tel:${profile.contact.phone}`}
-                        className="inline-flex items-center gap-2 rounded-full border border-border bg-gradient-to-r from-card to-muted px-4 py-2 text-sm text-foreground shadow-sm hover:bg-muted transition-colors"
+                        className="inline-flex items-center gap-2 rounded-full border border-border bg-linear-to-r from-card to-muted px-4 py-2 text-sm text-foreground shadow-sm hover:bg-muted transition-colors"
                     >
                         <Phone className="h-4 w-4 text-primary" />
                         {profile.contact.phone}
@@ -126,7 +126,7 @@ export default function HRMode({
                         href={locationHref}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-border bg-gradient-to-r from-card to-muted px-4 py-2 text-sm text-foreground shadow-sm hover:bg-muted transition-colors"
+                        className="inline-flex items-center gap-2 rounded-full border border-border bg-linear-to-r from-card to-muted px-4 py-2 text-sm text-foreground shadow-sm hover:bg-muted transition-colors"
                     >
                         <MapPin className="h-4 w-4 text-primary" />
                         {profile.contact.location}
