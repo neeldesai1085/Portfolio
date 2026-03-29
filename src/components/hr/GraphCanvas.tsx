@@ -3,6 +3,9 @@ import profile from "@/data/profile.json";
 import projects from "@/data/projects.json";
 import skills from "@/data/skills.json";
 import summary from "@/data/summary.json";
+import experience from "@/data/experience.json";
+import initiatives from "@/data/initiatives.json";
+import academics from "@/data/academics.json";
 import graphConfig from "@/data/graphConfig.json";
 
 export type NodeType = "root" | "category" | "project" | "skill" | "summary";
@@ -41,7 +44,31 @@ function getChildrenForCategory(
             }));
     }
     if (categoryId === "summary") {
-        return summary.entries.map((t) => ({
+        return summary.entries.map((t, index) => ({
+            id: t.id.toString(),
+            label: `${String(index + 1).padStart(2, "0")}. ${t.title}`,
+            type: "summary",
+            data: t,
+        }));
+    }
+    if (categoryId === "experience") {
+        return experience.entries.map((t) => ({
+            id: t.id.toString(),
+            label: t.title,
+            type: "summary",
+            data: t,
+        }));
+    }
+    if (categoryId === "initiatives") {
+        return initiatives.entries.map((t) => ({
+            id: t.id.toString(),
+            label: t.title,
+            type: "summary",
+            data: t,
+        }));
+    }
+    if (categoryId === "academics") {
+        return academics.entries.map((t) => ({
             id: t.id.toString(),
             label: t.title,
             type: "summary",
@@ -144,6 +171,24 @@ export default function GraphCanvas({
             {
                 id: "summary",
                 label: "Summary",
+                type: "category" as NodeType,
+                parentId: "root",
+            },
+            {
+                id: "experience",
+                label: "Experience",
+                type: "category" as NodeType,
+                parentId: "root",
+            },
+            {
+                id: "initiatives",
+                label: "Initiatives",
+                type: "category" as NodeType,
+                parentId: "root",
+            },
+            {
+                id: "academics",
+                label: "Academics",
                 type: "category" as NodeType,
                 parentId: "root",
             },
@@ -397,13 +442,13 @@ export default function GraphCanvas({
 
                     if (isRoot) {
                         baseClasses =
-                            "text-white border-[3px] w-24 h-24 rounded-full font-bold text-base";
+                            "text-white border-[3px] w-20 h-20 rounded-full font-bold text-sm leading-tight px-1";
                         paintStyles.backgroundColor = activeColor;
                         paintStyles.borderColor = activeColor;
                         paintStyles.boxShadow = `0 10px 25px -5px ${activeColor}80`;
                     } else if (isCategory) {
                         baseClasses =
-                            "bg-card text-foreground border-[3px] w-[72px] h-[72px] rounded-full font-bold text-[13px] leading-tight";
+                            "bg-card text-foreground border-[3px] w-[64px] h-[64px] rounded-full font-bold text-[12px] leading-tight px-1";
                         paintStyles.borderColor = activeColor;
                         paintStyles.boxShadow = `0 8px 15px -5px ${activeColor}60`;
                         if (node.expanded) {
@@ -411,7 +456,7 @@ export default function GraphCanvas({
                         }
                     } else {
                         baseClasses =
-                            "bg-card text-muted-foreground border-2 px-4 py-2.5 rounded-xl max-w-40 break-words text-center text-[12px] font-semibold flex items-center justify-center";
+                            "bg-card text-muted-foreground border-2 px-3 py-2 rounded-xl max-w-36 break-words text-center text-[11px] leading-tight font-semibold flex items-center justify-center";
                         paintStyles.borderColor = activeColor;
                         paintStyles.boxShadow = `0 4px 10px -3px ${activeColor}50`;
                     }
