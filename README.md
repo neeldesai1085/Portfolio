@@ -11,9 +11,11 @@
 This is a **personal portfolio website** with a twist — it has **two completely different interfaces** built into one application:
 
 ### 🎨 HR Mode (Visual)
-The default experience. Opens with a polished **landing page** showcasing my profile, skills highlights, and action buttons. Scroll down to discover an **interactive graph** where my projects, skills, summary etc. are represented as clickable, draggable nodes — like a mind map you can explore.
+
+The default experience. Opens with a polished **landing page** showcasing my profile, skills highlights, and action buttons. Scroll down to discover an **interactive graph** where my projects, skills, summary, experience, initiatives, and academics are represented as clickable, draggable nodes — like a mind map you can explore.
 
 ### 💻 Dev Mode (Terminal)
+
 A fully functional **command-line terminal** where technically-minded visitors can type commands like `projects`, `skills`, or `open portfolio-system` to navigate the same content through a CLI experience. Complete with autocomplete (press Tab!), command history (Arrow keys), and familiar terminal aesthetics.
 
 **Both modes show the exact same content** — just presented differently depending on who's viewing it.
@@ -22,35 +24,38 @@ A fully functional **command-line terminal** where technically-minded visitors c
 
 ## Features at a Glance
 
-| Feature | What It Does |
-|---------|-------------|
-| 🔄 **Two Modes** | Switch between a visual graph interface and a terminal interface anytime |
-| 🎬 **Cinematic Transitions** | Each mode switch plays a unique full-screen animation |
-| 🌗 **Light & Dark Theme** | Automatically matches your device preference, or toggle manually |
-| 🗺️ **Interactive Mind Map** | Click nodes to expand categories, drag to rearrange, click leaves for full details |
-| ⌨️ **Working Terminal** | Real command parsing with autocomplete, history, and 12+ commands |
-| 📱 **Fully Responsive** | Works seamlessly on phones, tablets, and desktops |
-| 📄 **100% Data-Driven** | All content lives in simple JSON files — zero coding needed to update |
-| 🎯 **Portfolio Bottom Sheet** | Clicking any project or skill reveals a rich detail panel with tech stacks, proficiency bars, and links |
-| 📨 **Contact Form** | Built-in contact dialog accessible from both modes |
-| ⬇️ **Resume Download** | One-click resume download button in the header and landing page |
+| Feature                       | What It Does                                                                                      |
+| ----------------------------- | ------------------------------------------------------------------------------------------------- |
+| 🔄 **Two Modes**              | Switch between a visual graph interface and a terminal interface anytime                          |
+| 🎬 **Cinematic Transitions**  | Each mode switch plays a unique full-screen animation                                             |
+| 🌗 **Light & Dark Theme**     | Automatically matches your device preference, or toggle manually                                  |
+| 🗺️ **Interactive Mind Map**   | Click nodes to expand categories, drag to rearrange, click leaves for full details                |
+| ⌨️ **Working Terminal**       | Real command parsing with autocomplete, history, and 12+ commands                                 |
+| 📱 **Fully Responsive**       | Works seamlessly on phones, tablets, and desktops                                                 |
+| 📄 **100% Data-Driven**       | All content lives in simple JSON files — zero coding needed to update                             |
+| 🎯 **Portfolio Bottom Sheet** | Clicking any project or category reveals a rich detail panel with descriptions, stacks, and links |
+| 📨 **Contact Form**           | Built-in contact dialog accessible from both modes                                                |
+| ⬇️ **Resume Download**        | One-click resume download button in the header and landing page                                   |
 
 ---
 
 ## How to Use the Site
 
 ### As a Visitor (HR Mode)
+
 1. **Land** on the hero page — read the bio, see highlights
 2. **Scroll down** (or click the arrow) to reach the interactive graph
 3. **Click** any category bubble (Projects, Skills, Summary, etc.) to expand it
-4. **Click** any expanded item to see its full details in a sliding panel
-5. **Drag** any node to rearrange the graph however you like
-6. **Need help?** Look for the ❓ button in the bottom-left corner
+4. **For Skills**: click a skill category (Frontend, Backend, etc.) to open the detail panel
+5. **For Projects/Summary/Experience**: click any expanded item to see its full details
+6. **Drag** any node to rearrange the graph however you like
+7. **Need help?** Look for the ❓ button in the bottom-left corner
 
 ### As a Developer (Dev Mode)
+
 1. Click **"Dev Mode"** in the top-right corner (look for the arrow hint!)
 2. Type `help` to see all available commands
-3. Try: `about`, `projects`, `skills`, `summary` etc.
+3. Try: `about`, `projects`, `skills`, `summary`, `experience`, `initiatives`, `academics`
 4. Use `open <project-id>` to inspect a specific project
 5. Use `theme dark` or `theme light` to switch themes
 6. Press **Tab** for autocomplete, **Arrow Up/Down** for command history
@@ -63,15 +68,18 @@ A fully functional **command-line terminal** where technically-minded visitors c
 
 ### Quick Reference
 
-| What to Change | Which File to Edit |
-|---------------|-------------------|
-| Name, bio, contact info | `src/data/profile.json` |
-| Projects | `src/data/projects.json` |
-| Skills & proficiency levels | `src/data/skills.json` |
-| Career summary | `src/data/summary.json` |
-| Graph categories & colors | `src/data/graph.json` |
-| Terminal commands | `src/data/commands.json` |
-| UI labels & text | `src/data/ui-strings.json` |
+| What to Change          | Which File to Edit          |
+| ----------------------- | --------------------------- |
+| Name, bio, contact info | `src/data/profile.json`     |
+| Projects                | `src/data/projects.json`    |
+| Skills (categorized)    | `src/data/skills.json`      |
+| Career summary          | `src/data/summary.json`     |
+| Experience              | `src/data/experience.json`  |
+| Initiatives             | `src/data/initiatives.json` |
+| Academics               | `src/data/academics.json`   |
+| Graph colors            | `src/data/graphConfig.json` |
+| Terminal commands       | `src/data/commands.json`    |
+| UI labels & text        | `src/data/uiStrings.json`   |
 
 ### Example: Adding a New Project
 
@@ -79,14 +87,14 @@ Open `src/data/projects.json` and add an entry:
 
 ```json
 {
-  "id": "my-new-project",
-  "title": "My New Project",
-  "shortDescription": "A brief one-liner.",
-  "detailedDescription": "A full paragraph about what this project does...",
-  "stack": ["React", "TypeScript", "Node.js"],
-  "githubLink": "https://github.com/...",
-  "liveLink": "https://...",
-  "featured": true
+    "id": "my-new-project",
+    "title": "My New Project",
+    "shortDescription": "A brief one-liner.",
+    "detailedDescription": "A full paragraph about what this project does...",
+    "stack": ["React", "TypeScript", "Node.js"],
+    "githubLink": "https://github.com/...",
+    "liveLink": "https://...",
+    "featured": true
 }
 ```
 
@@ -112,12 +120,12 @@ Opens at `http://localhost:5173`. Changes reload instantly.
 
 ### Other Commands
 
-| Command | What It Does |
-|---------|-------------|
-| `npm run build` | Create a production-ready build |
+| Command           | What It Does                         |
+| ----------------- | ------------------------------------ |
+| `npm run build`   | Create a production-ready build      |
 | `npm run preview` | Preview the production build locally |
-| `npm run lint` | Check code for issues |
-| `npm run test` | Run automated tests |
+| `npm run lint`    | Check code for issues                |
+| `npm run test`    | Run automated tests                  |
 
 ---
 
@@ -125,16 +133,16 @@ Opens at `http://localhost:5173`. Changes reload instantly.
 
 For those interested in what powers this under the hood:
 
-| Technology | Role |
-|-----------|------|
-| **React 18** | UI framework — components, hooks, lazy loading, Suspense |
-| **TypeScript** | Type safety across all components, data, and state |
-| **Vite 5** | Lightning-fast build tool with hot module replacement |
-| **Zustand** | Lightweight global state (mode, theme, UI flags) with localStorage persistence |
-| **Tailwind CSS 3** | Utility-first styling with a full HSL design token system for light/dark themes |
-| **shadcn/ui** | 50+ accessible UI primitives (dialog, avatar, toast, input, etc.) |
-| **Lucide React** | Clean, consistent icon set |
-| **React Router** | Client-side routing with URL param support (`?mode=dev`) |
+| Technology         | Role                                                                            |
+| ------------------ | ------------------------------------------------------------------------------- |
+| **React 19**       | UI framework — components, hooks, lazy loading, Suspense                        |
+| **TypeScript**     | Type safety across all components, data, and state                              |
+| **Vite 7**         | Lightning-fast build tool with hot module replacement                           |
+| **Zustand**        | Lightweight global state (mode, theme, UI flags) with localStorage persistence  |
+| **Tailwind CSS 4** | Utility-first styling with a full HSL design token system for light/dark themes |
+| **shadcn/ui**      | 50+ accessible UI primitives (dialog, avatar, toast, input, etc.)               |
+| **Lucide React**   | Clean, consistent icon set                                                      |
+| **React Router**   | Client-side routing with URL param support (`?mode=dev`)                        |
 
 ### Architecture Highlights
 
@@ -153,14 +161,12 @@ For those interested in what powers this under the hood:
 ```
 src/
 ├── components/       # Shared UI (header, theme toggle, contact form, mode intro)
-├── core/             # Engines (graph builder, command parser)
-├── data/             # All content as JSON (the only files you need to edit)
-├── modes/
 │   ├── dev/          # Terminal interface
 │   └── hr/           # Visual interface (landing + graph + detail panel)
+├── data/             # All content as JSON (the only files you need to edit)
+├── pages/            # Route pages
 ├── store/            # Zustand global state
-├── types/            # TypeScript interfaces
-└── pages/            # Route pages
+└── types/            # TypeScript interfaces
 ```
 
 ---
