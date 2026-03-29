@@ -136,7 +136,7 @@ export default function HRMode({
 
             <button
                 onClick={onScrollToGraph}
-                className="relative z-10 mt-12 flex flex-col items-center gap-1 text-muted-foreground hover:text-foreground transition-colors animate-bounce"
+                className="relative z-10 mt-12 flex flex-col items-center gap-1 text-muted-foreground hover:text-foreground transition-colors animate-bounce cursor-pointer"
                 aria-label="Scroll to graph"
             >
                 <span className="text-xs">
