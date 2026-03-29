@@ -5,7 +5,7 @@
             "versionTag": "v1.0",
             "title": "Bachelor's in Information Technology",
             "description": "Began formal education in IT at Shri G. S. Institute of Technology and Science, Indore. Focused on foundational programming concepts and software development.",
-            "year": "Sept 2023",
+            "time": "Sept 2023",
             "type": "academics"
         },
         {
@@ -13,7 +13,7 @@
             "versionTag": "v1.5",
             "title": "Project on Data Structure Visualization",
             "description": "Developed an interactive visualization tool to help students understand complex data structures and algorithms, using user controlled inputs, simultaneous code highlighting and animations.",
-            "year": "July 2024",
+            "time": "July 2024",
             "type": "projects"
         },
         {
@@ -21,7 +21,7 @@
             "versionTag": "v2.0",
             "title": "Business Operation Internship",
             "description": "Worked at Cloudraft Technologies Pvt. Ltd. gaining experience in working with APIs and creation of real-world deployments. Contributed to the development of a custom LMS for a client, using Frappe framework and Python.",
-            "year": "March 2025",
+            "time": "March 2025",
             "type": "experience"
         },
         {
@@ -29,7 +29,7 @@
             "versionTag": "v2.5",
             "title": "Personal Portfolio Website",
             "description": "Designed and developed a personal portfolio website to showcase projects, skills, and experience. Implemented a custom terminal interface for navigation and an interactive graph to navigate through my journey.",
-            "year": "June 2025",
+            "time": "June 2025",
             "type": "projects"
         },
         {
@@ -37,7 +37,7 @@
             "versionTag": "v3.0",
             "title": "Frontend Development Internship",
             "description": "Gained hands-on experience in frontend development at Assemble, contributing to the design and implementation of a responsive UI for an Esports platform. Developed reusable components and structured layouts to ensure a seamless user experience across devices.",
-            "year": "July 2025",
+            "time": "July 2025",
             "type": "experience"
         },
         {
@@ -45,7 +45,7 @@
             "versionTag": "v3.5",
             "title": "HackIndore 3.0 Organizer",
             "description": "Organized HackIndore 3.0, a 12-hour hackathon that brought together over 750 participants from across the country. Coordinated logistics, secured sponsorships and facilitated the event to create an engaging and productive environment for aspiring developers.",
-            "year": "Sept 2025",
+            "time": "Sept 2025",
             "type": "initiatives"
         },
         {
@@ -53,7 +53,7 @@
             "versionTag": "v4.0",
             "title": "Full Stack Development Internship",
             "description": "Interned at IIT Ropar, contributing to the development of an educational platform for students with AI monitoring system. Worked on both frontend and backend tasks, including database management, API development and UI design to enhance the learning experience for users.",
-            "year": "Jan 2026",
+            "time": "Jan 2026",
             "type": "experience"
         },
         {
@@ -61,7 +61,7 @@
             "versionTag": "v4.5",
             "title": "Node.js ML Package Manager",
             "description": "Building a command-line tool to manage and distribute smart software models. Implementing a two-step loading system to ensure lightweight downloads and fast access. Developing a central platform for efficient storage, search, and retrieval of model files.",
-            "year": "Till Date",
+            "time": "Till Date",
             "type": "projects"
         },
         {
@@ -69,7 +69,7 @@
             "versionTag": "v5.0",
             "title": "Secure Secrets Manager",
             "description": "Architecting a secure management system to store and share sensitive data across different environments. Implementing encrypted storage with automated injection to prevent raw data exposure. Designing a structured API to handle storing, retrieving, and protecting information through high-level security standards.",
-            "year": "Till Date",
+            "time": "Till Date",
             "type": "projects"
         }
     ]

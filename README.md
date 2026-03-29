@@ -11,7 +11,7 @@
 This is a **personal portfolio website** with a twist — it has **two completely different interfaces** built into one application:
 
 ### 🎨 HR Mode (Visual)
-The default experience. Opens with a polished **landing page** showcasing my profile, skills highlights, and action buttons. Scroll down to discover an **interactive graph** where my projects, skills, timeline, and philosophy are represented as clickable, draggable nodes — like a mind map you can explore.
+The default experience. Opens with a polished **landing page** showcasing my profile, skills highlights, and action buttons. Scroll down to discover an **interactive graph** where my projects, skills, summary etc. are represented as clickable, draggable nodes — like a mind map you can explore.
 
 ### 💻 Dev Mode (Terminal)
 A fully functional **command-line terminal** where technically-minded visitors can type commands like `projects`, `skills`, or `open portfolio-system` to navigate the same content through a CLI experience. Complete with autocomplete (press Tab!), command history (Arrow keys), and familiar terminal aesthetics.
@@ -42,7 +42,7 @@ A fully functional **command-line terminal** where technically-minded visitors c
 ### As a Visitor (HR Mode)
 1. **Land** on the hero page — read the bio, see highlights
 2. **Scroll down** (or click the arrow) to reach the interactive graph
-3. **Click** any category bubble (Projects, Skills, Timeline, etc.) to expand it
+3. **Click** any category bubble (Projects, Skills, Summary, etc.) to expand it
 4. **Click** any expanded item to see its full details in a sliding panel
 5. **Drag** any node to rearrange the graph however you like
 6. **Need help?** Look for the ❓ button in the bottom-left corner
@@ -50,7 +50,7 @@ A fully functional **command-line terminal** where technically-minded visitors c
 ### As a Developer (Dev Mode)
 1. Click **"Dev Mode"** in the top-right corner (look for the arrow hint!)
 2. Type `help` to see all available commands
-3. Try: `about`, `projects`, `skills`, `timeline`, `philosophy`
+3. Try: `about`, `projects`, `skills`, `summary` etc.
 4. Use `open <project-id>` to inspect a specific project
 5. Use `theme dark` or `theme light` to switch themes
 6. Press **Tab** for autocomplete, **Arrow Up/Down** for command history
@@ -68,8 +68,7 @@ A fully functional **command-line terminal** where technically-minded visitors c
 | Name, bio, contact info | `src/data/profile.json` |
 | Projects | `src/data/projects.json` |
 | Skills & proficiency levels | `src/data/skills.json` |
-| Career timeline | `src/data/timeline.json` |
-| Engineering principles | `src/data/philosophy.json` |
+| Career summary | `src/data/summary.json` |
 | Graph categories & colors | `src/data/graph.json` |
 | Terminal commands | `src/data/commands.json` |
 | UI labels & text | `src/data/ui-strings.json` |

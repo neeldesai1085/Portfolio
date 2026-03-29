@@ -27,9 +27,9 @@
             "usage": "skills"
         },
         {
-            "name": "timeline",
-            "description": "Show career timeline",
-            "usage": "timeline"
+            "name": "summary",
+            "description": "Show career summary",
+            "usage": "summary"
         },
         {
             "name": "contact",
@@ -55,10 +55,10 @@
             "hasArgs": true,
             "subcommands": ["hr", "dev"]
         },
-        { 
-            "name": "clear", 
-            "description": "Clear terminal", 
-            "usage": "clear" 
+        {
+            "name": "clear",
+            "description": "Clear terminal",
+            "usage": "clear"
         }
     ]
 }

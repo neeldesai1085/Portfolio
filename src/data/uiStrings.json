@@ -1,16 +1,20 @@
 {
     "terminal": {
         "welcomeMessage": "Welcome to my portfolio! Type 'help' to see a list of available commands.",
-        "prompt": "neeld@portfolio:~$",
+        "prompt": "neeldesai@portfolio:~$",
         "placeholder": "Type a command...",
         "bootLines": [
             "> run portfolio.exe",
             "> Loading modules...",
-            "> [profile] ✓",
-            "> [projects] ✓",
+            "> [about] ✓",
             "> [skills] ✓",
-            "> [timeline] ✓",
-            "> [graph] ✓",
+            "> [projects] ✓",
+            "> [experience] ✓",
+            "> [initiatives] ✓",
+            "> [academics] ✓",
+            "> [summary] ✓",
+            "> [inspect] ✓",
+            "> [contact] ✓",
             "> System ready.",
             "> Type \"help\" to begin."
         ]
@@ -24,7 +28,7 @@
         ],
         "sections": {
             "exploreTitle": "Interactive Portfolio Graph",
-            "exploreSubtitle": "Navigate through my work, skills, and experience using the interactive graph below."
+            "exploreSubtitle": "Navigate through my entire journey using the interactive graph below."
         }
     }
 }

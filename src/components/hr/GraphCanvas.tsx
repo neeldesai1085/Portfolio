@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import profile from "@/data/profile.json";
 import projects from "@/data/projects.json";
 import skills from "@/data/skills.json";
-import timeline from "@/data/timeline.json";
+import summary from "@/data/summary.json";
 import graphConfig from "@/data/graphConfig.json";
 
-export type NodeType = "root" | "category" | "project" | "skill" | "timeline";
+export type NodeType = "root" | "category" | "project" | "skill" | "summary";
 
 export interface ItemNode {
     id: string;
@@ -40,11 +40,11 @@ function getChildrenForCategory(
                 data: s,
             }));
     }
-    if (categoryId === "timeline") {
-        return timeline.entries.map((t) => ({
+    if (categoryId === "summary") {
+        return summary.entries.map((t) => ({
             id: t.id.toString(),
             label: t.title,
-            type: "timeline",
+            type: "summary",
             data: t,
         }));
     }
@@ -142,8 +142,8 @@ export default function GraphCanvas({
                 parentId: "root",
             },
             {
-                id: "timeline",
-                label: "Timeline",
+                id: "summary",
+                label: "Summary",
                 type: "category" as NodeType,
                 parentId: "root",
             },
@@ -207,7 +207,7 @@ export default function GraphCanvas({
                 ns.map((n) => {
                     let newX = n.x;
                     let newY = n.y;
-                    
+
                     if (newX < paddingX) newX = paddingX;
                     if (newX > w - paddingX) newX = w - paddingX;
                     if (newY < topPadding) newY = topPadding;
@@ -217,7 +217,7 @@ export default function GraphCanvas({
                         return { ...n, x: newX, y: newY };
                     }
                     return n;
-                })
+                }),
             );
         };
 

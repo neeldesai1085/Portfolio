@@ -6,7 +6,7 @@ import commandsData from "@/data/commands.json";
 import projects from "@/data/projects.json";
 import profile from "@/data/profile.json";
 import skills from "@/data/skills.json";
-import timeline from "@/data/timeline.json";
+import summary from "@/data/summary.json";
 
 export interface CommandResult {
     type: "success" | "error" | "info" | "clear" | "mode-switch" | "contact";
@@ -329,17 +329,17 @@ export default function Terminal() {
             ),
         }),
 
-        timeline: () => ({
+        summary: () => ({
             type: "success",
             content: (
                 <div className="space-y-2">
-                    {timeline.entries.map((e) => (
+                    {summary.entries.map((e) => (
                         <div key={e.id} className="flex gap-3 text-sm">
                             <span className="text-terminal-accent font-mono w-12 shrink-0">
                                 {e.versionTag}
                             </span>
                             <span className="opacity-50 w-10 shrink-0">
-                                {e.year}
+                                {e.time}
                             </span>
                             <div>
                                 <p className="font-medium">{e.title}</p>
@@ -364,7 +364,8 @@ export default function Terminal() {
                     </p>
                     <p>
                         <span className="opacity-50">Modules loaded:</span>{" "}
-                        profile, projects, skills, timeline, philosophy, graph
+                        about, skills, projects, experience,initiatives,
+                        academics, summary, inspect, contact
                     </p>
                     <p>
                         <span className="opacity-50">Projects:</span>{" "}
@@ -375,8 +376,8 @@ export default function Terminal() {
                         {skills.categories.length}
                     </p>
                     <p>
-                        <span className="opacity-50">Timeline entries:</span>{" "}
-                        {timeline.entries.length}
+                        <span className="opacity-50">Summary entries:</span>{" "}
+                        {summary.entries.length}
                     </p>
                     <p>
                         <span className="opacity-50">Render time:</span>{" "}
@@ -433,14 +434,24 @@ export default function Terminal() {
                 return {
                     type: "error",
                     content: (
-                        <span>Already in <span className="text-terminal-accent">{modeName}</span> mode.</span>
+                        <span>
+                            Already in{" "}
+                            <span className="text-terminal-accent">
+                                {modeName}
+                            </span>{" "}
+                            mode.
+                        </span>
                     ),
                 };
             }
             return {
                 type: "mode-switch",
                 content: (
-                    <span>Switching to <span className="text-terminal-accent">{modeName}</span> mode...</span>
+                    <span>
+                        Switching to{" "}
+                        <span className="text-terminal-accent">{modeName}</span>{" "}
+                        mode...
+                    </span>
                 ),
             };
         },
