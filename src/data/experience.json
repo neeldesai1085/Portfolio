@@ -1,0 +1,25 @@
+{
+    "entries": [
+        {
+            "id": "e1",
+            "versionTag": "v2.0",
+            "title": "Business Operation Internship",
+            "description": "Worked at Cloudraft Technologies Pvt. Ltd. gaining experience in working with APIs and creation of real-world deployments. Contributed to the development of a custom LMS for a client, using Frappe framework and Python.",
+            "time": "March 2025"
+        },
+        {
+            "id": "e2",
+            "versionTag": "v3.0",
+            "title": "Frontend Development Internship",
+            "description": "Gained hands-on experience in frontend development at Assemble, contributing to the design and implementation of a responsive UI for an Esports platform. Developed reusable components and structured layouts to ensure a seamless user experience across devices.",
+            "time": "July 2025"
+        },
+        {
+            "id": "e3",
+            "versionTag": "v4.0",
+            "title": "Full Stack Development Internship",
+            "description": "Interned at IIT Ropar, contributing to the development of an educational platform for students with AI monitoring system. Worked on both frontend and backend tasks, including database management, API development and UI design to enhance the learning experience for users.",
+            "time": "Jan 2026"
+        }
+    ]
+}

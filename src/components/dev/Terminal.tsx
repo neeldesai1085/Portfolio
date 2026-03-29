@@ -7,6 +7,9 @@ import projects from "@/data/projects.json";
 import profile from "@/data/profile.json";
 import skills from "@/data/skills.json";
 import summary from "@/data/summary.json";
+import academics from "@/data/academics.json";
+import experience from "@/data/experience.json";
+import initiatives from "@/data/initiatives.json";
 
 export interface CommandResult {
     type: "success" | "error" | "info" | "clear" | "mode-switch" | "contact";
@@ -334,6 +337,78 @@ export default function Terminal() {
             content: (
                 <div className="space-y-2">
                     {[...summary.entries].reverse().map((e) => (
+                        <div key={e.id} className="flex gap-3 text-sm">
+                            <span className="text-terminal-accent font-mono w-12 shrink-0">
+                                {e.versionTag}
+                            </span>
+                            <span className="opacity-50 w-10 shrink-0">
+                                {e.time}
+                            </span>
+                            <div>
+                                <p className="font-medium">{e.title}</p>
+                                <p className="text-sm opacity-60">
+                                    {e.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ),
+        }),
+
+        experience: () => ({
+            type: "success",
+            content: (
+                <div className="space-y-2">
+                    {[...experience.entries].reverse().map((e) => (
+                        <div key={e.id} className="flex gap-3 text-sm">
+                            <span className="text-terminal-accent font-mono w-12 shrink-0">
+                                {e.versionTag}
+                            </span>
+                            <span className="opacity-50 w-10 shrink-0">
+                                {e.time}
+                            </span>
+                            <div>
+                                <p className="font-medium">{e.title}</p>
+                                <p className="text-sm opacity-60">
+                                    {e.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ),
+        }),
+
+        initiatives: () => ({
+            type: "success",
+            content: (
+                <div className="space-y-2">
+                    {[...initiatives.entries].reverse().map((e) => (
+                        <div key={e.id} className="flex gap-3 text-sm">
+                            <span className="text-terminal-accent font-mono w-12 shrink-0">
+                                {e.versionTag}
+                            </span>
+                            <span className="opacity-50 w-10 shrink-0">
+                                {e.time}
+                            </span>
+                            <div>
+                                <p className="font-medium">{e.title}</p>
+                                <p className="text-sm opacity-60">
+                                    {e.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ),
+        }),
+
+        academics: () => ({
+            type: "success",
+            content: (
+                <div className="space-y-2">
+                    {[...academics.entries].reverse().map((e) => (
                         <div key={e.id} className="flex gap-3 text-sm">
                             <span className="text-terminal-accent font-mono w-12 shrink-0">
                                 {e.versionTag}

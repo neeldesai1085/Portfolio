@@ -32,6 +32,21 @@
             "usage": "summary"
         },
         {
+            "name": "experience",
+            "description": "Show experience entries",
+            "usage": "experience"
+        },
+        {
+            "name": "initiatives",
+            "description": "Show initiatives entries",
+            "usage": "initiatives"
+        },
+        {
+            "name": "academics",
+            "description": "Show academics entries",
+            "usage": "academics"
+        },
+        {
             "name": "contact",
             "description": "Open contact form",
             "usage": "contact"
