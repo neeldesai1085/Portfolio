@@ -1,10 +1,26 @@
-import { ChevronDown, Download, Github, ExternalLink } from "lucide-react";
+import {
+    ChevronDown,
+    Download,
+    Github,
+    ExternalLink,
+    Mail,
+    Phone,
+    MapPin,
+} from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import profile from "@/data/profile.json";
 import uiStrings from "@/data/uiStrings.json";
 import RotatingDesignation from "@/components/RotatingDesignation";
 
-export default function HRMode({ onScrollToGraph }: { onScrollToGraph: () => void }) {
+export default function HRMode({
+    onScrollToGraph,
+}: {
+    onScrollToGraph: () => void;
+}) {
+    const locationHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+        profile.contact.location,
+    )}`;
+
     return (
         <section className="min-h-[calc(100vh-52px)] flex flex-col items-center justify-center px-6 py-12 bg-background relative overflow-hidden">
             <div
@@ -40,7 +56,7 @@ export default function HRMode({ onScrollToGraph }: { onScrollToGraph: () => voi
                     </p>
                 </div>
 
-                <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-lg mx-auto">
+                <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
                     {profile.longDescription}
                 </p>
 
@@ -89,6 +105,32 @@ export default function HRMode({ onScrollToGraph }: { onScrollToGraph: () => voi
                             <ExternalLink className="h-4 w-4" /> LinkedIn
                         </a>
                     )}
+                </div>
+
+                <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+                    <a
+                        href={`mailto:${profile.contact.email}`}
+                        className="inline-flex items-center gap-2 rounded-full border border-border bg-gradient-to-r from-card to-muted px-4 py-2 text-sm text-foreground shadow-sm hover:bg-muted transition-colors"
+                    >
+                        <Mail className="h-4 w-4 text-primary" />
+                        {profile.contact.email}
+                    </a>
+                    <a
+                        href={`tel:${profile.contact.phone}`}
+                        className="inline-flex items-center gap-2 rounded-full border border-border bg-gradient-to-r from-card to-muted px-4 py-2 text-sm text-foreground shadow-sm hover:bg-muted transition-colors"
+                    >
+                        <Phone className="h-4 w-4 text-primary" />
+                        {profile.contact.phone}
+                    </a>
+                    <a
+                        href={locationHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full border border-border bg-gradient-to-r from-card to-muted px-4 py-2 text-sm text-foreground shadow-sm hover:bg-muted transition-colors"
+                    >
+                        <MapPin className="h-4 w-4 text-primary" />
+                        {profile.contact.location}
+                    </a>
                 </div>
             </div>
 

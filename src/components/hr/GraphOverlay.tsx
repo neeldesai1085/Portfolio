@@ -1,5 +1,6 @@
 import type { NodeType } from "./GraphCanvas";
-import { X, ExternalLink, Github } from "lucide-react";
+import { X, ExternalLink, Github, Mail } from "lucide-react";
+import { usePortfolioStore } from "@/store/portfolioStore";
 
 interface Props {
     type: NodeType | null;
@@ -8,6 +9,8 @@ interface Props {
 }
 
 export default function GraphOverlay({ type, data, onClose }: Props) {
+    const setContactOpen = usePortfolioStore((state) => state.setContactOpen);
+
     if (!type || !data) return null;
 
     return (
@@ -90,6 +93,13 @@ export default function GraphOverlay({ type, data, onClose }: Props) {
                                             <ExternalLink size={16} /> LinkedIn
                                         </a>
                                     )}
+                                    <button
+                                        type="button"
+                                        onClick={() => setContactOpen(true)}
+                                        className="flex items-center gap-2 border border-border px-3 py-1.5 rounded-lg font-medium hover:bg-muted transition-colors"
+                                    >
+                                        <Mail size={16} /> Contact Me
+                                    </button>
                                 </div>
                             </div>
                         )}
