@@ -16,7 +16,7 @@ The default experience. Opens with a polished **landing page** showcasing my pro
 
 ### 💻 Dev Mode (Terminal)
 
-A fully functional **command-line terminal** where technically-minded visitors can type commands like `projects`, `skills`, or `open portfolio-system` to navigate the same content through a CLI experience. Complete with autocomplete (press Tab!), command history (Arrow keys), and familiar terminal aesthetics.
+A fully functional **command-line terminal** where technically-minded visitors can type commands like `projects`, `skills`, or `pro-open portfolio-system` to navigate the same content through a CLI experience. Complete with autocomplete (press Tab!), command history (Arrow keys), and familiar terminal aesthetics.
 
 **Both modes show the exact same content** — just presented differently depending on who's viewing it.
 
@@ -56,9 +56,10 @@ A fully functional **command-line terminal** where technically-minded visitors c
 1. Click **"Dev Mode"** in the top-right corner (look for the arrow hint!)
 2. Type `help` to see all available commands
 3. Try: `about`, `projects`, `skills`, `summary`, `experience`, `initiatives`, `academics`
-4. Use `open <project-id>` to inspect a specific project
-5. Use `theme dark` or `theme light` to switch themes
-6. Press **Tab** for autocomplete, **Arrow Up/Down** for command history
+4. Use `pro-open <project-id>` to inspect a specific project
+5. Use `ex-open <experience-id>` to inspect a specific experience entry
+6. Use `theme dark` or `theme light` to switch themes
+7. Press **Tab** for autocomplete, **Arrow Up/Down** for command history
 
 ---
 
@@ -98,7 +99,7 @@ Open `src/data/projects.json` and add an entry:
 }
 ```
 
-It will automatically appear in the graph, the terminal's `projects` command, and be accessible via `open my-new-project`.
+It will automatically appear in the graph, the terminal's `projects` command, and be accessible via `pro-open my-new-project`.
 
 ---
 
