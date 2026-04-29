@@ -27,8 +27,8 @@
             ],
             "architectureNotes": "Wrapper–fetch system with two-stage loading (local package + remote fetch). Backend integrates PostgreSQL for structured data and R2 for distributed model storage.",
             "githubLink": "https://github.com/neeldesai1085/mlnpm",
-            "liveLink": "#",
-            "featured": false
+            "liveLink": "https://mlnpm.vercel.app/",
+            "featured": true
         },
         {
             "id": "portfolio-system",
@@ -38,8 +38,8 @@
             "stack": ["JavaScript", "React", "Tailwind CSS"],
             "architectureNotes": "Dual-mode rendering system with shared JSON data layer. Includes command engine for CLI interactions and graph engine for dynamic mind-map visualization.",
             "githubLink": "https://github.com/neeldesai1085/Portfolio",
-            "liveLink": "https://portfolio-neel-desai.vercel.app/",
-            "featured": true
+            "liveLink": "https://neeldesai.vercel.app/",
+            "featured": false
         },
         {
             "id": "algo-lens",
