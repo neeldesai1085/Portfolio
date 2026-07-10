@@ -61,7 +61,7 @@
             "versionTag": "v4.5",
             "title": "Node.js ML Package Manager",
             "description": "Building a command-line tool to manage and distribute smart software models. Implementing a two-step loading system to ensure lightweight downloads and fast access. Developing a central platform for efficient storage, search, and retrieval of model files.",
-            "time": "Till Date",
+            "time": "Feb 2026",
             "type": "projects"
         },
         {
@@ -69,8 +69,16 @@
             "versionTag": "v5.0",
             "title": "Secure Secrets Manager",
             "description": "Architecting a secure management system to store and share sensitive data across different environments. Implementing encrypted storage with automated injection to prevent raw data exposure. Designing a structured API to handle storing, retrieving, and protecting information through high-level security standards.",
-            "time": "Till Date",
+            "time": "April 2026",
             "type": "projects"
+        },
+        {
+            "id": "t10",
+            "versionTag": "v5.5",
+            "title": "Software Development Internship",
+            "description": "Delivered 10+ tasks across MERN and Spring Boot codebases, shipping bug fixes and incremental features for 2 production services. Built and refactored REST API endpoints and React components across 2 tech stacks in an Agile sprint workflow with senior engineers.",
+            "time": "Sept 2026",
+            "type": "experience"
         }
     ]
 }

@@ -8,8 +8,8 @@
             "stack": ["TypeScript", "React", "Next.js", "Spring Boot"],
             "architectureNotes": "MVC-based REST API design with encrypted storage and controlled runtime injection. Structured around secure data handling, environment isolation, and modular service layers.",
             "githubLink": "https://github.com/ishikachhajed/Envoy",
-            "liveLink": "#",
-            "featured": false
+            "liveLink": "https://envoy-vault-frontend.vercel.app/",
+            "featured": true
         },
         {
             "id": "ml-package-manager",

@@ -22,5 +22,13 @@
         "detailedDescription": "Interned at IIT Ropar, contributing to the development of a scalable educational platform using React, Node.js, and PostgreSQL. Engineered full-stack features across multiple courses, supporting high concurrent student activity. Built a quiz delivery and progress tracking system to enable structured assessments and performance monitoring. Designed and optimized PostgreSQL database schemas, including a leaderboard system to rank users across courses. Collaborated in an agile environment, working across frontend and backend to improve system performance, scalability, and user experience.",
         "stack": ["React", "Node.js", "PostgreSQL", "Express.js"],
         "architectureNotes": "Full-stack architecture with REST APIs and relational database design. Includes quiz engine, progress tracking, and leaderboard system with scalable data handling."
+    },
+    {
+        "id": "systango-software-dev",
+        "title": "Software Development Internship – MERN & Spring Boot",
+        "shortDescription": "Full-stack development across MERN and Spring Boot codebases.",
+        "detailedDescription": "Interned at Systango, contributing to multiple production codebases across MERN and Spring Boot stacks. Delivered 10+ tasks including bug fixes, feature enhancements, and API development. Built and refactored REST API endpoints and React components, ensuring maintainability and performance. Collaborated with senior engineers in an Agile sprint workflow, participating in code reviews and design discussions to improve overall system quality.",
+        "stack": ["JavaScript", "React", "Node.js", "Spring Boot", "PostgreSQL"],
+        "architectureNotes": "Full-stack development with focus on REST API design, component-based frontend architecture, and relational database design."
     }
 ]

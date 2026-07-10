@@ -1,9 +1,9 @@
 {
     "name": "Neel Desai",
     "role": "Student at SGSITS Indore",
-    "tagline": "B. Tech. Undergraduate | Information Technology | Batch '27",
+    "tagline": "B. Tech. Undergraduate | Information Technology | Nomura KakushIN 10.0 Finalist",
     "shortDescription": "Aspiring software engineer with a passion for competitive programming and core computer science.",
-    "longDescription": "Results-driven Full Stack Developer and B.Tech (IT) student at SGSITS Indore with hands-on internship experience at IIT Ropar and industry startups. Proficient in React.js, Node.js, TypeScript, PostgreSQL, and Spring Boot. Demonstrated ability to build scalable web applications, design efficient REST APIs, and deliver production-ready features supporting 1,000+ concurrent users. Zealous about software engineering, problem-solving, and data structures & algorithms.",
+    "longDescription": "Full Stack Developer and B.Tech (IT) student at SGSITS Indore with 4 internships across research, startup, and enterprise environments. Proficient in React.js, Node.js, Spring Boot, TypeScript, and PostgreSQL, with strong DSA fundamentals.",
     "highlights": [
         { 
             "label": "Projects", 
@@ -15,7 +15,7 @@
         },
         { 
             "label": "Experience", 
-            "value": "6+ months" 
+            "value": "9+ months" 
         }
     ],
     "designations": [

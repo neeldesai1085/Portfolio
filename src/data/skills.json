@@ -132,6 +132,11 @@
                     "id": "cloudflare-r2",
                     "name": "Cloudflare R2",
                     "description": "Object storage for large assets with predictable cost and API compatibility."
+                },
+                {
+                    "id": "github-actions",
+                    "name": "GitHub Actions",
+                    "description": "Automated CI/CD workflows for code integration and deployment."
                 }
             ]
         },
